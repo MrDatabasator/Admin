@@ -1,0 +1,9 @@
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe.config
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.pdb
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csprojResolveAssemblyReference.cache
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Daemons.resources
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Properties.Resources.resources
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.exe
+C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.pdb
