@@ -27,7 +27,9 @@ namespace BackupAdmin
         {
             ServerReference.Service1Client Client = new ServerReference.Service1Client();
             Daemon test = new Daemon(1, "nejvíc top daemon", "PCdoma", "127.0.0.1");
-            _model.ShowData(new List<Daemon>() { /*Client.GetDaemon(test as ServerReference.Daemon) */});
+            
+            //Client.GetDaemon(((object)test) as ServerReference.Daemon);
+            _model.ShowData(new List<Daemon>() { /*Client.GetDaemon(((object)test) as ServerReference.Daemon)*/ });
         }
     }
 }

@@ -24,5 +24,7 @@ namespace BackupAdmin
         public string PcName { get; set; }
         [DisplayName("IP Address")]
         public string IPAddress { get; set; }
+        [Browsable(false)]
+        public DateTime LastActive { get; set; }
     }
 }

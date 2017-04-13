@@ -13,3 +13,8 @@ C:\Users\adasdasdasd\Source\Repos\Backup-Admin\BackupAdmin\BackupAdmin\obj\Debug
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe.config
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.exe
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.pdb
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csprojResolveAssemblyReference.cache
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Configure.resources
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Daemons.resources
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Properties.Resources.resources
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
