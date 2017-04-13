@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BackupAdmin.ServiceReference {
+namespace BackupAdmin.ServerReference {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbDaemon", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Daemon", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
     [System.SerializableAttribute()]
-    public partial class tbDaemon : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Daemon : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -27,6 +27,9 @@ namespace BackupAdmin.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IpAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastActiveField;
@@ -66,6 +69,19 @@ namespace BackupAdmin.ServiceReference {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IpAddress {
+            get {
+                return this.IpAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IpAddressField, value) != true)) {
+                    this.IpAddressField = value;
+                    this.RaisePropertyChanged("IpAddress");
                 }
             }
         }
@@ -168,16 +184,22 @@ namespace BackupAdmin.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServerReference.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemon", ReplyAction="http://tempuri.org/IService1/GetDaemonResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BackupAdmin.ServiceReference.tbDaemon))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BackupAdmin.ServiceReference.CompositeType))]
-        BackupAdmin.ServiceReference.tbDaemon GetDaemon(object o);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemon", ReplyAction="http://tempuri.org/IService1/UploadDaemonResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BackupAdmin.ServerReference.Daemon))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BackupAdmin.ServerReference.CompositeType))]
+        void UploadDaemon(object o);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemon", ReplyAction="http://tempuri.org/IService1/UploadDaemonResponse")]
+        System.Threading.Tasks.Task UploadDaemonAsync(object o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemon", ReplyAction="http://tempuri.org/IService1/GetDaemonResponse")]
-        System.Threading.Tasks.Task<BackupAdmin.ServiceReference.tbDaemon> GetDaemonAsync(object o);
+        BackupAdmin.ServerReference.Daemon GetDaemon(BackupAdmin.ServerReference.Daemon o);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemon", ReplyAction="http://tempuri.org/IService1/GetDaemonResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.Daemon> GetDaemonAsync(BackupAdmin.ServerReference.Daemon o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         string GetData(int value);
@@ -186,19 +208,19 @@ namespace BackupAdmin.ServiceReference {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        BackupAdmin.ServiceReference.CompositeType GetDataUsingDataContract(BackupAdmin.ServiceReference.CompositeType composite);
+        BackupAdmin.ServerReference.CompositeType GetDataUsingDataContract(BackupAdmin.ServerReference.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<BackupAdmin.ServiceReference.CompositeType> GetDataUsingDataContractAsync(BackupAdmin.ServiceReference.CompositeType composite);
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.CompositeType> GetDataUsingDataContractAsync(BackupAdmin.ServerReference.CompositeType composite);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : BackupAdmin.ServiceReference.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : BackupAdmin.ServerReference.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<BackupAdmin.ServiceReference.IService1>, BackupAdmin.ServiceReference.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<BackupAdmin.ServerReference.IService1>, BackupAdmin.ServerReference.IService1 {
         
         public Service1Client() {
         }
@@ -219,11 +241,19 @@ namespace BackupAdmin.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public BackupAdmin.ServiceReference.tbDaemon GetDaemon(object o) {
+        public void UploadDaemon(object o) {
+            base.Channel.UploadDaemon(o);
+        }
+        
+        public System.Threading.Tasks.Task UploadDaemonAsync(object o) {
+            return base.Channel.UploadDaemonAsync(o);
+        }
+        
+        public BackupAdmin.ServerReference.Daemon GetDaemon(BackupAdmin.ServerReference.Daemon o) {
             return base.Channel.GetDaemon(o);
         }
         
-        public System.Threading.Tasks.Task<BackupAdmin.ServiceReference.tbDaemon> GetDaemonAsync(object o) {
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.Daemon> GetDaemonAsync(BackupAdmin.ServerReference.Daemon o) {
             return base.Channel.GetDaemonAsync(o);
         }
         
@@ -235,11 +265,11 @@ namespace BackupAdmin.ServiceReference {
             return base.Channel.GetDataAsync(value);
         }
         
-        public BackupAdmin.ServiceReference.CompositeType GetDataUsingDataContract(BackupAdmin.ServiceReference.CompositeType composite) {
+        public BackupAdmin.ServerReference.CompositeType GetDataUsingDataContract(BackupAdmin.ServerReference.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<BackupAdmin.ServiceReference.CompositeType> GetDataUsingDataContractAsync(BackupAdmin.ServiceReference.CompositeType composite) {
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.CompositeType> GetDataUsingDataContractAsync(BackupAdmin.ServerReference.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
     }

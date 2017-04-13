@@ -12,13 +12,22 @@ namespace BackupAdmin
 {
     public partial class Form_Daemons : Form
     {
+        DaemonDataModel _model = new DaemonDataModel();
         public Form_Daemons()
+
         {
             InitializeComponent();
-            DaemonDataModel _model = new DaemonDataModel();
+            
             grid_daemons.DataSource = _model;
             //grid_daemons.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             //grid_daemons.AutoResizeColumns();
+            Test();
+        }
+        public void Test()
+        {
+            ServerReference.Service1Client Client = new ServerReference.Service1Client();
+            Daemon test = new Daemon(1, "nejvíc top daemon", "PCdoma", "127.0.0.1");
+            _model.ShowData(new List<Daemon>() { /*Client.GetDaemon(test as ServerReference.Daemon) */});
         }
     }
 }
