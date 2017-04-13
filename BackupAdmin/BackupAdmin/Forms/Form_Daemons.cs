@@ -29,7 +29,7 @@ namespace BackupAdmin
             Daemon test = new Daemon(1, "nejvíc top daemon", "PCdoma", "127.0.0.1");
             
             //Client.GetDaemon(((object)test) as ServerReference.Daemon);
-            _model.ShowData(new List<Daemon>() { /*Client.GetDaemon(((object)test) as ServerReference.Daemon)*/ });
+            _model.ShowData(new List<Daemon>() { ((object)Client.GetDaemon(((object)test) as ServerReference.Daemon)) as Daemon });
         }
     }
 }

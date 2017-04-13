@@ -18,3 +18,5 @@ D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmi
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Daemons.resources
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Properties.Resources.resources
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.pdb
