@@ -7,3 +7,6 @@ C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\Back
 C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
 C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.exe
 C:\Soubory\MiniMe\Programování\BackupSW\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.pdb
+C:\Users\adasdasdasd\Source\Repos\Backup-Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe.config
+C:\Users\adasdasdasd\Source\Repos\Backup-Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.exe
+C:\Users\adasdasdasd\Source\Repos\Backup-Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.pdb
