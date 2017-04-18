@@ -13,23 +13,33 @@ namespace BackupAdmin
     public partial class Form_Daemons : Form
     {
         DaemonDataModel _model = new DaemonDataModel();
+        ServerReference.Service1Client Client { get; set; }
         public Form_Daemons()
-
         {
             InitializeComponent();
             
             grid_daemons.DataSource = _model;
             //grid_daemons.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             //grid_daemons.AutoResizeColumns();
-            Test();
+            SendDaemonTest();
+            //SendStringTest();
         }
-        public void Test()
+        public void SendDaemonTest()
         {
-            ServerReference.Service1Client Client = new ServerReference.Service1Client();
-            Daemon test = new Daemon(1, "nejvíc top daemon", "PCdoma", "127.0.0.1");
-            
+            Client = new ServerReference.Service1Client();
+            ServerReference.Daemon test = new ServerReference.Daemon();
+            test.DaemonName = "Daemon1";
+            test.PcName = "pc1";
+            test.IpAddress = "127.0.0.1";
+
             //Client.GetDaemon(((object)test) as ServerReference.Daemon);
-            _model.ShowData(new List<Daemon>() { ((object)Client.GetDaemon(((object)test) as ServerReference.Daemon)) as Daemon });
+            
+            _model.ShowData(new List<ServerReference.Daemon>() { Client.GetDaemon(test) });
+        }
+        public void SendStringTest()
+        {
+            Client = new ServerReference.Service1Client();
+            Client.UploadString("Foo Bar");
         }
     }
 }

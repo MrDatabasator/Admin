@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://localhost:42867/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_UploadString_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadString" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadStringResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_UploadDaemon_InputMessage">
     <wsdl:part name="parameters" element="tns:UploadDaemon" />
   </wsdl:message>
@@ -32,6 +38,10 @@
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="UploadString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadString" message="tns:IService1_UploadString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadStringResponse" message="tns:IService1_UploadString_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="UploadDaemon">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadDaemon" message="tns:IService1_UploadDaemon_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadDaemonResponse" message="tns:IService1_UploadDaemon_OutputMessage" />
@@ -51,6 +61,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadString">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UploadDaemon">
       <soap:operation soapAction="http://tempuri.org/IService1/UploadDaemon" style="document" />
       <wsdl:input>

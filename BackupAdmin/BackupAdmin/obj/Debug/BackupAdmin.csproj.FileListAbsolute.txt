@@ -20,3 +20,13 @@ D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmi
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.pdb
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe.config
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.exe
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.pdb
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.pdb
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csprojResolveAssemblyReference.cache
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Configure.resources
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Daemons.resources
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Properties.Resources.resources
+X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache

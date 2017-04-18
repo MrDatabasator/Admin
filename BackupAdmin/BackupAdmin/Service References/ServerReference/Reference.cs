@@ -187,6 +187,12 @@ namespace BackupAdmin.ServerReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServerReference.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadString", ReplyAction="http://tempuri.org/IService1/UploadStringResponse")]
+        void UploadString(string s);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadString", ReplyAction="http://tempuri.org/IService1/UploadStringResponse")]
+        System.Threading.Tasks.Task UploadStringAsync(string s);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemon", ReplyAction="http://tempuri.org/IService1/UploadDaemonResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BackupAdmin.ServerReference.Daemon))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BackupAdmin.ServerReference.CompositeType))]
@@ -239,6 +245,14 @@ namespace BackupAdmin.ServerReference {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void UploadString(string s) {
+            base.Channel.UploadString(s);
+        }
+        
+        public System.Threading.Tasks.Task UploadStringAsync(string s) {
+            return base.Channel.UploadStringAsync(s);
         }
         
         public void UploadDaemon(object o) {

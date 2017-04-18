@@ -10,7 +10,7 @@ namespace BackupAdmin
 {
     class DaemonDataModel : IListSource
     {
-        private BindingList<Daemon> _data = new BindingList<Daemon>();
+        private BindingList<ServerReference.Daemon> _data = new BindingList<ServerReference.Daemon>();
 
         public bool ContainsListCollection
         {
@@ -35,20 +35,20 @@ namespace BackupAdmin
             return this._data;
         }
 
-        public Daemon GetDaemon(int index)
+        public ServerReference.Daemon GetDaemon(int index)
         {
             return this._data[index];
         }
 
-        public void ShowData(List<Daemon> Daemon)
+        public void ShowData(List<ServerReference.Daemon> Daemon)
         {
             this._data.Clear();
-            foreach (Daemon daemon in Daemon)
+            foreach (ServerReference.Daemon daemon in Daemon)
             {
                 this._data.Add(daemon);
             }
         }
-        public void UpdateDaemon(int index, Daemon d)
+        public void UpdateDaemon(int index, ServerReference.Daemon d)
         {
             this._data[index] = d;
         }
