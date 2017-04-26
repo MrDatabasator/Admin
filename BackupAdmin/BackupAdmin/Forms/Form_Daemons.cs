@@ -21,25 +21,26 @@ namespace BackupAdmin
             grid_daemons.DataSource = _model;
             //grid_daemons.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             //grid_daemons.AutoResizeColumns();
-            SendDaemonTest();
-            //SendStringTest();
+            //SendDaemonTest();
+            SendStringTest();
         }
         public void SendDaemonTest()
         {
             Client = new ServerReference.Service1Client();
-            ServerReference.Daemon test = new ServerReference.Daemon();
+            ServerReference.tbDaemon test = new ServerReference.tbDaemon();
             test.DaemonName = "Daemon1";
             test.PcName = "pc1";
             test.IpAddress = "127.0.0.1";
 
             //Client.GetDaemon(((object)test) as ServerReference.Daemon);
             
-            _model.ShowData(new List<ServerReference.Daemon>() { Client.GetDaemon(test) });
+            //_model.ShowData(new List<ServerReference.tbDaemon>() { Client.GetDaemon(test) });
         }
         public void SendStringTest()
         {
             Client = new ServerReference.Service1Client();
-            Client.UploadString("Foo Bar");
+            //Client.UploadString("Foo Bar");
+            Client.UpdateDaemonLastActive(8);
         }
     }
 }

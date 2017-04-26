@@ -114,7 +114,7 @@
     <None Include="Service References\ServerReference\BackupAdmin.ServerReference.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServerReference\BackupAdmin.ServerReference.Daemon.datasource">
+    <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbDaemon.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServerReference\Service1.wsdl" />

@@ -15,9 +15,9 @@ namespace BackupAdmin.ServerReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Daemon", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbDaemon", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
     [System.SerializableAttribute()]
-    public partial class Daemon : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class tbDaemon : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -124,6 +124,269 @@ namespace BackupAdmin.ServerReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbDestination", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.SerializableAttribute()]
+    public partial class tbDestination : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private BackupAdmin.ServerReference.tbTask[] LTaskField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public BackupAdmin.ServerReference.tbTask[] LTask {
+            get {
+                return this.LTaskField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LTaskField, value) != true)) {
+                    this.LTaskField = value;
+                    this.RaisePropertyChanged("LTask");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbTask", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.SerializableAttribute()]
+    public partial class tbTask : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DaemonIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KornExpressionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private BackupAdmin.ServerReference.tbDestination[] LDestinationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TaskFinishedField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DaemonId {
+            get {
+                return this.DaemonIdField;
+            }
+            set {
+                if ((this.DaemonIdField.Equals(value) != true)) {
+                    this.DaemonIdField = value;
+                    this.RaisePropertyChanged("DaemonId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string KornExpression {
+            get {
+                return this.KornExpressionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KornExpressionField, value) != true)) {
+                    this.KornExpressionField = value;
+                    this.RaisePropertyChanged("KornExpression");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public BackupAdmin.ServerReference.tbDestination[] LDestination {
+            get {
+                return this.LDestinationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LDestinationField, value) != true)) {
+                    this.LDestinationField = value;
+                    this.RaisePropertyChanged("LDestination");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TaskFinished {
+            get {
+                return this.TaskFinishedField;
+            }
+            set {
+                if ((this.TaskFinishedField.Equals(value) != true)) {
+                    this.TaskFinishedField = value;
+                    this.RaisePropertyChanged("TaskFinished");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbLog", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.SerializableAttribute()]
+    public partial class tbLog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DaemonIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DaemonId {
+            get {
+                return this.DaemonIdField;
+            }
+            set {
+                if ((this.DaemonIdField.Equals(value) != true)) {
+                    this.DaemonIdField = value;
+                    this.RaisePropertyChanged("DaemonId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
     [System.SerializableAttribute()]
     public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -194,18 +457,40 @@ namespace BackupAdmin.ServerReference {
         System.Threading.Tasks.Task UploadStringAsync(string s);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemon", ReplyAction="http://tempuri.org/IService1/UploadDaemonResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BackupAdmin.ServerReference.Daemon))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BackupAdmin.ServerReference.CompositeType))]
-        void UploadDaemon(object o);
+        void UploadDaemon(BackupAdmin.ServerReference.tbDaemon o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemon", ReplyAction="http://tempuri.org/IService1/UploadDaemonResponse")]
-        System.Threading.Tasks.Task UploadDaemonAsync(object o);
+        System.Threading.Tasks.Task UploadDaemonAsync(BackupAdmin.ServerReference.tbDaemon o);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDestination", ReplyAction="http://tempuri.org/IService1/UploadDestinationResponse")]
+        void UploadDestination(BackupAdmin.ServerReference.tbDestination d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDestination", ReplyAction="http://tempuri.org/IService1/UploadDestinationResponse")]
+        System.Threading.Tasks.Task UploadDestinationAsync(BackupAdmin.ServerReference.tbDestination d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadLog", ReplyAction="http://tempuri.org/IService1/UploadLogResponse")]
+        void UploadLog(BackupAdmin.ServerReference.tbLog l);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadLog", ReplyAction="http://tempuri.org/IService1/UploadLogResponse")]
+        System.Threading.Tasks.Task UploadLogAsync(BackupAdmin.ServerReference.tbLog l);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTask", ReplyAction="http://tempuri.org/IService1/UploadTaskResponse")]
+        void UploadTask(BackupAdmin.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTask", ReplyAction="http://tempuri.org/IService1/UploadTaskResponse")]
+        System.Threading.Tasks.Task UploadTaskAsync(BackupAdmin.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDaemonLastActive", ReplyAction="http://tempuri.org/IService1/UpdateDaemonLastActiveResponse")]
+        void UpdateDaemonLastActive(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDaemonLastActive", ReplyAction="http://tempuri.org/IService1/UpdateDaemonLastActiveResponse")]
+        System.Threading.Tasks.Task UpdateDaemonLastActiveAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemon", ReplyAction="http://tempuri.org/IService1/GetDaemonResponse")]
-        BackupAdmin.ServerReference.Daemon GetDaemon(BackupAdmin.ServerReference.Daemon o);
+        BackupAdmin.ServerReference.tbDaemon GetDaemon(BackupAdmin.ServerReference.tbDaemon o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemon", ReplyAction="http://tempuri.org/IService1/GetDaemonResponse")]
-        System.Threading.Tasks.Task<BackupAdmin.ServerReference.Daemon> GetDaemonAsync(BackupAdmin.ServerReference.Daemon o);
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon> GetDaemonAsync(BackupAdmin.ServerReference.tbDaemon o);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         string GetData(int value);
@@ -255,19 +540,51 @@ namespace BackupAdmin.ServerReference {
             return base.Channel.UploadStringAsync(s);
         }
         
-        public void UploadDaemon(object o) {
+        public void UploadDaemon(BackupAdmin.ServerReference.tbDaemon o) {
             base.Channel.UploadDaemon(o);
         }
         
-        public System.Threading.Tasks.Task UploadDaemonAsync(object o) {
+        public System.Threading.Tasks.Task UploadDaemonAsync(BackupAdmin.ServerReference.tbDaemon o) {
             return base.Channel.UploadDaemonAsync(o);
         }
         
-        public BackupAdmin.ServerReference.Daemon GetDaemon(BackupAdmin.ServerReference.Daemon o) {
+        public void UploadDestination(BackupAdmin.ServerReference.tbDestination d) {
+            base.Channel.UploadDestination(d);
+        }
+        
+        public System.Threading.Tasks.Task UploadDestinationAsync(BackupAdmin.ServerReference.tbDestination d) {
+            return base.Channel.UploadDestinationAsync(d);
+        }
+        
+        public void UploadLog(BackupAdmin.ServerReference.tbLog l) {
+            base.Channel.UploadLog(l);
+        }
+        
+        public System.Threading.Tasks.Task UploadLogAsync(BackupAdmin.ServerReference.tbLog l) {
+            return base.Channel.UploadLogAsync(l);
+        }
+        
+        public void UploadTask(BackupAdmin.ServerReference.tbTask t) {
+            base.Channel.UploadTask(t);
+        }
+        
+        public System.Threading.Tasks.Task UploadTaskAsync(BackupAdmin.ServerReference.tbTask t) {
+            return base.Channel.UploadTaskAsync(t);
+        }
+        
+        public void UpdateDaemonLastActive(int id) {
+            base.Channel.UpdateDaemonLastActive(id);
+        }
+        
+        public System.Threading.Tasks.Task UpdateDaemonLastActiveAsync(int id) {
+            return base.Channel.UpdateDaemonLastActiveAsync(id);
+        }
+        
+        public BackupAdmin.ServerReference.tbDaemon GetDaemon(BackupAdmin.ServerReference.tbDaemon o) {
             return base.Channel.GetDaemon(o);
         }
         
-        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.Daemon> GetDaemonAsync(BackupAdmin.ServerReference.Daemon o) {
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon> GetDaemonAsync(BackupAdmin.ServerReference.tbDaemon o) {
             return base.Channel.GetDaemonAsync(o);
         }
         
