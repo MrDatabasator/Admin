@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Classes\Daemon.cs" />
     <Compile Include="DataModels\DaemonDataModel.cs" />
+    <Compile Include="DataModels\DestinationDataModel.cs" />
     <Compile Include="Forms\Form_AddTask.cs">
       <SubType>Form</SubType>
     </Compile>
