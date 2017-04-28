@@ -30,3 +30,6 @@ X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Config
 X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Daemons.resources
 X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Properties.Resources.resources
 X:\PROG\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
+C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe.config
+C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.exe
+C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.pdb

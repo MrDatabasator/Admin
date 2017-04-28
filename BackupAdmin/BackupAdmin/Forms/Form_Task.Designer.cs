@@ -28,11 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.grid_tasks = new System.Windows.Forms.DataGridView();
+            this.grid_destinations = new System.Windows.Forms.DataGridView();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_remove = new System.Windows.Forms.Button();
+            this.btn_addTask = new System.Windows.Forms.Button();
+            this.groupBox_tasks = new System.Windows.Forms.GroupBox();
+            this.groupBox_destinations = new System.Windows.Forms.GroupBox();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_tasks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_destinations)).BeginInit();
+            this.groupBox_tasks.SuspendLayout();
+            this.groupBox_destinations.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // grid_tasks
+            // 
+            this.grid_tasks.AllowUserToAddRows = false;
+            this.grid_tasks.AllowUserToDeleteRows = false;
+            this.grid_tasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_tasks.Location = new System.Drawing.Point(6, 21);
+            this.grid_tasks.Name = "grid_tasks";
+            this.grid_tasks.ReadOnly = true;
+            this.grid_tasks.RowTemplate.Height = 24;
+            this.grid_tasks.Size = new System.Drawing.Size(456, 250);
+            this.grid_tasks.TabIndex = 0;
+            // 
+            // grid_destinations
+            // 
+            this.grid_destinations.AllowUserToAddRows = false;
+            this.grid_destinations.AllowUserToDeleteRows = false;
+            this.grid_destinations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_destinations.Location = new System.Drawing.Point(6, 21);
+            this.grid_destinations.Name = "grid_destinations";
+            this.grid_destinations.ReadOnly = true;
+            this.grid_destinations.RowTemplate.Height = 24;
+            this.grid_destinations.Size = new System.Drawing.Size(456, 279);
+            this.grid_destinations.TabIndex = 4;
+            // 
+            // btn_save
+            // 
+            this.btn_save.Location = new System.Drawing.Point(393, 645);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(80, 30);
+            this.btn_save.TabIndex = 5;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = true;
+            // 
+            // btn_remove
+            // 
+            this.btn_remove.Location = new System.Drawing.Point(221, 645);
+            this.btn_remove.Name = "btn_remove";
+            this.btn_remove.Size = new System.Drawing.Size(80, 30);
+            this.btn_remove.TabIndex = 6;
+            this.btn_remove.Text = "Remove";
+            this.btn_remove.UseVisualStyleBackColor = true;
+            // 
+            // btn_addTask
+            // 
+            this.btn_addTask.Location = new System.Drawing.Point(382, 277);
+            this.btn_addTask.Name = "btn_addTask";
+            this.btn_addTask.Size = new System.Drawing.Size(80, 30);
+            this.btn_addTask.TabIndex = 7;
+            this.btn_addTask.Text = "Add Task";
+            this.btn_addTask.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_tasks
+            // 
+            this.groupBox_tasks.Controls.Add(this.btn_addTask);
+            this.groupBox_tasks.Controls.Add(this.grid_tasks);
+            this.groupBox_tasks.Location = new System.Drawing.Point(3, 12);
+            this.groupBox_tasks.Name = "groupBox_tasks";
+            this.groupBox_tasks.Size = new System.Drawing.Size(468, 315);
+            this.groupBox_tasks.TabIndex = 8;
+            this.groupBox_tasks.TabStop = false;
+            this.groupBox_tasks.Text = "Tasks";
+            // 
+            // groupBox_destinations
+            // 
+            this.groupBox_destinations.Controls.Add(this.grid_destinations);
+            this.groupBox_destinations.Location = new System.Drawing.Point(5, 333);
+            this.groupBox_destinations.Name = "groupBox_destinations";
+            this.groupBox_destinations.Size = new System.Drawing.Size(468, 306);
+            this.groupBox_destinations.TabIndex = 9;
+            this.groupBox_destinations.TabStop = false;
+            this.groupBox_destinations.Text = "Destinations";
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Location = new System.Drawing.Point(307, 645);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(80, 30);
+            this.btn_cancel.TabIndex = 10;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            // 
+            // Form_Task
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form_Task";
+            this.ClientSize = new System.Drawing.Size(479, 680);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.groupBox_destinations);
+            this.Controls.Add(this.groupBox_tasks);
+            this.Controls.Add(this.btn_remove);
+            this.Controls.Add(this.btn_save);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Form_Task";
+            this.Text = "Tasks";
+            this.Load += new System.EventHandler(this.Form_Task_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_tasks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_destinations)).EndInit();
+            this.groupBox_tasks.ResumeLayout(false);
+            this.groupBox_destinations.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView grid_tasks;
+        private System.Windows.Forms.DataGridView grid_destinations;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Button btn_addTask;
+        private System.Windows.Forms.GroupBox groupBox_tasks;
+        private System.Windows.Forms.GroupBox groupBox_destinations;
+        private System.Windows.Forms.Button btn_cancel;
     }
 }

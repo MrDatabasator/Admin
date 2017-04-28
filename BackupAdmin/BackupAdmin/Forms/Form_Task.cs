@@ -16,5 +16,10 @@ namespace BackupAdmin
         {
             InitializeComponent();
         }
+
+        private void Form_Task_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
