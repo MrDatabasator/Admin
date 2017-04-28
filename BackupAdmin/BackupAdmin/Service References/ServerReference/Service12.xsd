@@ -48,6 +48,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="tbLog" nillable="true" type="tns:tbLog" />
+  <xs:complexType name="ArrayOftbDaemon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tbDaemon" nillable="true" type="tns:tbDaemon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftbDaemon" nillable="true" type="tns:ArrayOftbDaemon" />
   <xs:complexType name="CompositeType">
     <xs:sequence>
       <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />

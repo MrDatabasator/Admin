@@ -22,7 +22,8 @@ namespace BackupAdmin
             //grid_daemons.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             //grid_daemons.AutoResizeColumns();
             //SendDaemonTest();
-            SendStringTest();
+            //SendStringTest();
+            LoadAllDaemons();
         }
         public void SendDaemonTest()
         {
@@ -41,6 +42,11 @@ namespace BackupAdmin
             Client = new ServerReference.Service1Client();
             //Client.UploadString("Foo Bar");
             Client.UpdateDaemonLastActive(8);
+        }
+        public void LoadAllDaemons()
+        {
+            Client = new ServerReference.Service1Client();
+            _model.ShowData(Client.GetAllDaemons().ToList());
         }
     }
 }

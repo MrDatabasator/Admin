@@ -39,29 +39,32 @@
             this.grid_daemons.AllowUserToDeleteRows = false;
             this.grid_daemons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_daemons.Location = new System.Drawing.Point(0, 0);
+            this.grid_daemons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grid_daemons.Name = "grid_daemons";
             this.grid_daemons.ReadOnly = true;
             this.grid_daemons.RowTemplate.Height = 24;
-            this.grid_daemons.Size = new System.Drawing.Size(394, 395);
+            this.grid_daemons.Size = new System.Drawing.Size(511, 321);
             this.grid_daemons.TabIndex = 0;
             // 
             // btn_manage
             // 
-            this.btn_manage.Location = new System.Drawing.Point(308, 401);
+            this.btn_manage.Location = new System.Drawing.Point(444, 325);
+            this.btn_manage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_manage.Name = "btn_manage";
-            this.btn_manage.Size = new System.Drawing.Size(75, 29);
+            this.btn_manage.Size = new System.Drawing.Size(56, 24);
             this.btn_manage.TabIndex = 1;
             this.btn_manage.Text = "Manage";
             this.btn_manage.UseVisualStyleBackColor = true;
             // 
             // Form_Daemons
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 436);
+            this.ClientSize = new System.Drawing.Size(511, 354);
             this.Controls.Add(this.btn_manage);
             this.Controls.Add(this.grid_daemons);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Daemons";

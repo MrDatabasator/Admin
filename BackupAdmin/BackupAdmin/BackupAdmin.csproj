@@ -120,6 +120,9 @@
     <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbDaemon.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbTask.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServerReference\Service1.wsdl" />
     <None Include="Service References\ServerReference\Service1.xsd">
       <SubType>Designer</SubType>

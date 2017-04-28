@@ -12,9 +12,21 @@ namespace BackupAdmin
 {
     public partial class Form_Configure : Form
     {
+        private ServerReference.tbDaemon Daemon { get; set; }
+
         public Form_Configure()
         {
             InitializeComponent();
+        }
+        public Form_Configure(ServerReference.tbDaemon daemon)
+        {
+            InitializeComponent();
+            Daemon = daemon;
+            SetComponents();
+        }
+        public void SetComponents()
+        {
+            textBox_daemonName.Text = Daemon.DaemonName;
         }
     }
 }

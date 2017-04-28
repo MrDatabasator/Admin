@@ -486,6 +486,36 @@ namespace BackupAdmin.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDaemonLastActive", ReplyAction="http://tempuri.org/IService1/UpdateDaemonLastActiveResponse")]
         System.Threading.Tasks.Task UpdateDaemonLastActiveAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CheckDeamonReference", ReplyAction="http://tempuri.org/IService1/CheckDeamonReferenceResponse")]
+        bool CheckDeamonReference(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CheckDeamonReference", ReplyAction="http://tempuri.org/IService1/CheckDeamonReferenceResponse")]
+        System.Threading.Tasks.Task<bool> CheckDeamonReferenceAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReference", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceResponse")]
+        void UpdateDeamonReference(int id, BackupAdmin.ServerReference.tbDaemon d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReference", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceResponse")]
+        System.Threading.Tasks.Task UpdateDeamonReferenceAsync(int id, BackupAdmin.ServerReference.tbDaemon d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ExistDeamonTask", ReplyAction="http://tempuri.org/IService1/ExistDeamonTaskResponse")]
+        bool ExistDeamonTask(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ExistDeamonTask", ReplyAction="http://tempuri.org/IService1/ExistDeamonTaskResponse")]
+        System.Threading.Tasks.Task<bool> ExistDeamonTaskAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDeamonTask", ReplyAction="http://tempuri.org/IService1/GetDeamonTaskResponse")]
+        BackupAdmin.ServerReference.tbTask[] GetDeamonTask(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDeamonTask", ReplyAction="http://tempuri.org/IService1/GetDeamonTaskResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbTask[]> GetDeamonTaskAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDaemons", ReplyAction="http://tempuri.org/IService1/GetAllDaemonsResponse")]
+        BackupAdmin.ServerReference.tbDaemon[] GetAllDaemons();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDaemons", ReplyAction="http://tempuri.org/IService1/GetAllDaemonsResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon[]> GetAllDaemonsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemon", ReplyAction="http://tempuri.org/IService1/GetDaemonResponse")]
         BackupAdmin.ServerReference.tbDaemon GetDaemon(BackupAdmin.ServerReference.tbDaemon o);
         
@@ -578,6 +608,46 @@ namespace BackupAdmin.ServerReference {
         
         public System.Threading.Tasks.Task UpdateDaemonLastActiveAsync(int id) {
             return base.Channel.UpdateDaemonLastActiveAsync(id);
+        }
+        
+        public bool CheckDeamonReference(int id) {
+            return base.Channel.CheckDeamonReference(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckDeamonReferenceAsync(int id) {
+            return base.Channel.CheckDeamonReferenceAsync(id);
+        }
+        
+        public void UpdateDeamonReference(int id, BackupAdmin.ServerReference.tbDaemon d) {
+            base.Channel.UpdateDeamonReference(id, d);
+        }
+        
+        public System.Threading.Tasks.Task UpdateDeamonReferenceAsync(int id, BackupAdmin.ServerReference.tbDaemon d) {
+            return base.Channel.UpdateDeamonReferenceAsync(id, d);
+        }
+        
+        public bool ExistDeamonTask(int id) {
+            return base.Channel.ExistDeamonTask(id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ExistDeamonTaskAsync(int id) {
+            return base.Channel.ExistDeamonTaskAsync(id);
+        }
+        
+        public BackupAdmin.ServerReference.tbTask[] GetDeamonTask(int id) {
+            return base.Channel.GetDeamonTask(id);
+        }
+        
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbTask[]> GetDeamonTaskAsync(int id) {
+            return base.Channel.GetDeamonTaskAsync(id);
+        }
+        
+        public BackupAdmin.ServerReference.tbDaemon[] GetAllDaemons() {
+            return base.Channel.GetAllDaemons();
+        }
+        
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon[]> GetAllDaemonsAsync() {
+            return base.Channel.GetAllDaemonsAsync();
         }
         
         public BackupAdmin.ServerReference.tbDaemon GetDaemon(BackupAdmin.ServerReference.tbDaemon o) {
