@@ -87,6 +87,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="DataModels\TaskDataModel.cs" />
     <EmbeddedResource Include="Forms\Form_Configure.resx">
       <DependentUpon>Form_Configure.cs</DependentUpon>
     </EmbeddedResource>

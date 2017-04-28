@@ -14,8 +14,10 @@ namespace BackupAdmin
     {
         DaemonDataModel _model = new DaemonDataModel();
         ServerReference.Service1Client Client { get; set; }
+
         public Form_Daemons()
         {
+            Client = new ServerReference.Service1Client();
             InitializeComponent();
             
             grid_daemons.DataSource = _model;
@@ -26,27 +28,38 @@ namespace BackupAdmin
             LoadAllDaemons();
         }
         public void SendDaemonTest()
-        {
-            Client = new ServerReference.Service1Client();
+        {            
             ServerReference.tbDaemon test = new ServerReference.tbDaemon();
             test.DaemonName = "Daemon1";
             test.PcName = "pc1";
-            test.IpAddress = "127.0.0.1";
-
-            //Client.GetDaemon(((object)test) as ServerReference.Daemon);
+            test.IpAddress = "127.0.0.1";           
             
             //_model.ShowData(new List<ServerReference.tbDaemon>() { Client.GetDaemon(test) });
         }
         public void SendStringTest()
-        {
-            Client = new ServerReference.Service1Client();
+        {            
             //Client.UploadString("Foo Bar");
             Client.UpdateDaemonLastActive(8);
         }
         public void LoadAllDaemons()
-        {
-            Client = new ServerReference.Service1Client();
+        {            
             _model.ShowData(Client.GetAllDaemons().ToList());
+        }
+
+        private void btn_manage_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Form_Configure fConfig = new Form_Configure(_model.GetDaemon(grid_daemons.CurrentRow.Index));
+                if (fConfig.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 }
