@@ -42,3 +42,4 @@ C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debu
 C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
 C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe
 C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.pdb
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Task.resources

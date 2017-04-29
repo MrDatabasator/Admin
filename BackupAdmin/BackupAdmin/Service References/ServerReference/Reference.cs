@@ -37,6 +37,9 @@ namespace BackupAdmin.ServerReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PcNameField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RefreshRateField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -108,6 +111,19 @@ namespace BackupAdmin.ServerReference {
                 if ((object.ReferenceEquals(this.PcNameField, value) != true)) {
                     this.PcNameField = value;
                     this.RaisePropertyChanged("PcName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RefreshRate {
+            get {
+                return this.RefreshRateField;
+            }
+            set {
+                if ((this.RefreshRateField.Equals(value) != true)) {
+                    this.RefreshRateField = value;
+                    this.RaisePropertyChanged("RefreshRate");
                 }
             }
         }
@@ -209,6 +225,9 @@ namespace BackupAdmin.ServerReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private BackupAdmin.ServerReference.tbDaemon DaemonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DaemonIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -221,7 +240,13 @@ namespace BackupAdmin.ServerReference {
         private BackupAdmin.ServerReference.tbDestination[] LDestinationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastTaskCommitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TaskFinishedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TaskNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -230,6 +255,19 @@ namespace BackupAdmin.ServerReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public BackupAdmin.ServerReference.tbDaemon Daemon {
+            get {
+                return this.DaemonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DaemonField, value) != true)) {
+                    this.DaemonField = value;
+                    this.RaisePropertyChanged("Daemon");
+                }
             }
         }
         
@@ -286,6 +324,19 @@ namespace BackupAdmin.ServerReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastTaskCommit {
+            get {
+                return this.LastTaskCommitField;
+            }
+            set {
+                if ((this.LastTaskCommitField.Equals(value) != true)) {
+                    this.LastTaskCommitField = value;
+                    this.RaisePropertyChanged("LastTaskCommit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int TaskFinished {
             get {
                 return this.TaskFinishedField;
@@ -294,6 +345,19 @@ namespace BackupAdmin.ServerReference {
                 if ((this.TaskFinishedField.Equals(value) != true)) {
                     this.TaskFinishedField = value;
                     this.RaisePropertyChanged("TaskFinished");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TaskName {
+            get {
+                return this.TaskNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TaskNameField, value) != true)) {
+                    this.TaskNameField = value;
+                    this.RaisePropertyChanged("TaskName");
                 }
             }
         }
@@ -318,6 +382,9 @@ namespace BackupAdmin.ServerReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private BackupAdmin.ServerReference.tbDaemon DaemonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DaemonIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -333,6 +400,19 @@ namespace BackupAdmin.ServerReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public BackupAdmin.ServerReference.tbDaemon Daemon {
+            get {
+                return this.DaemonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DaemonField, value) != true)) {
+                    this.DaemonField = value;
+                    this.RaisePropertyChanged("Daemon");
+                }
             }
         }
         

@@ -7,6 +7,7 @@
       <xs:element minOccurs="0" name="IpAddress" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LastActive" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PcName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefreshRate" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="tbDaemon" nillable="true" type="tns:tbDaemon" />
@@ -26,11 +27,14 @@
   <xs:element name="ArrayOftbTask" nillable="true" type="tns:ArrayOftbTask" />
   <xs:complexType name="tbTask">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Daemon" nillable="true" type="tns:tbDaemon" />
       <xs:element minOccurs="0" name="DaemonId" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="KornExpression" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LDestination" nillable="true" type="tns:ArrayOftbDestination" />
+      <xs:element minOccurs="0" name="LastTaskCommit" type="xs:dateTime" />
       <xs:element minOccurs="0" name="TaskFinished" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="tbTask" nillable="true" type="tns:tbTask" />
@@ -42,6 +46,7 @@
   <xs:element name="ArrayOftbDestination" nillable="true" type="tns:ArrayOftbDestination" />
   <xs:complexType name="tbLog">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Daemon" nillable="true" type="tns:tbDaemon" />
       <xs:element minOccurs="0" name="DaemonId" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />

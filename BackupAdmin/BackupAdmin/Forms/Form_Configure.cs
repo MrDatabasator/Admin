@@ -32,8 +32,8 @@ namespace BackupAdmin
         public void SetComponents()
         {
             textBox_daemonName.Text = Daemon.DaemonName;
-            _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());       
-            
+            textBox_sRefreshRate.Text = Daemon.RefreshRate.ToString();
+            _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());
         }
     }
 }

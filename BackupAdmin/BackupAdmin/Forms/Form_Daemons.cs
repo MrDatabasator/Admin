@@ -48,18 +48,18 @@ namespace BackupAdmin
 
         private void btn_manage_MouseClick(object sender, MouseEventArgs e)
         {
-            try
-            {
+            /*try
+            {*/
                 Form_Configure fConfig = new Form_Configure(_model.GetDaemon(grid_daemons.CurrentRow.Index));
                 if (fConfig.ShowDialog() == DialogResult.OK)
                 {
 
                 }
-            }
+            /*}
             catch(Exception ex)
             {
 
-            }
+            }*/
         }
     }
 }
