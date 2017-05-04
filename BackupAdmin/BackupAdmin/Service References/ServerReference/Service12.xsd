@@ -16,6 +16,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="LTask" nillable="true" type="tns:ArrayOftbTask" />
+      <xs:element minOccurs="0" name="NetDestinationPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetSourcePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:int" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
     </xs:sequence>
     <xs:attribute ref="ser:Id" />
@@ -30,7 +33,6 @@
   <xs:element name="ArrayOftbTask" nillable="true" type="tns:ArrayOftbTask" />
   <xs:complexType name="tbTask">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Daemon" nillable="true" type="tns:tbDaemon" />
       <xs:element minOccurs="0" name="DaemonId" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="KornExpression" nillable="true" type="xs:string" />

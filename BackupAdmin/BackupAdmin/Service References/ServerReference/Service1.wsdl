@@ -55,6 +55,18 @@
   <wsdl:message name="IService1_UpdateDeamonReference_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateDeamonReferenceResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_FindDestinationByTaskId_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindDestinationByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindDestinationByTaskId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindDestinationByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindTaskByDestinationId_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTaskByDestinationId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindTaskByDestinationId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTaskByDestinationIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ExistDeamonTask_InputMessage">
     <wsdl:part name="parameters" element="tns:ExistDeamonTask" />
   </wsdl:message>
@@ -135,6 +147,14 @@
     <wsdl:operation name="UpdateDeamonReference">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReference" message="tns:IService1_UpdateDeamonReference_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDeamonReferenceResponse" message="tns:IService1_UpdateDeamonReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDestinationByTaskId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FindDestinationByTaskId" message="tns:IService1_FindDestinationByTaskId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FindDestinationByTaskIdResponse" message="tns:IService1_FindDestinationByTaskId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTaskByDestinationId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FindTaskByDestinationId" message="tns:IService1_FindTaskByDestinationId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FindTaskByDestinationIdResponse" message="tns:IService1_FindTaskByDestinationId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ExistDeamonTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExistDeamonTask" message="tns:IService1_ExistDeamonTask_InputMessage" />
@@ -236,6 +256,24 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateDeamonReference">
       <soap:operation soapAction="http://tempuri.org/IService1/UpdateDeamonReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDestinationByTaskId">
+      <soap:operation soapAction="http://tempuri.org/IService1/FindDestinationByTaskId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTaskByDestinationId">
+      <soap:operation soapAction="http://tempuri.org/IService1/FindTaskByDestinationId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

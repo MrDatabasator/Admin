@@ -154,6 +154,15 @@ namespace BackupAdmin.ServerReference {
         private BackupAdmin.ServerReference.tbTask[] LTaskField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NetDestinationPathField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NetSourcePathField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TaskIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -193,6 +202,45 @@ namespace BackupAdmin.ServerReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NetDestinationPath {
+            get {
+                return this.NetDestinationPathField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NetDestinationPathField, value) != true)) {
+                    this.NetDestinationPathField = value;
+                    this.RaisePropertyChanged("NetDestinationPath");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NetSourcePath {
+            get {
+                return this.NetSourcePathField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NetSourcePathField, value) != true)) {
+                    this.NetSourcePathField = value;
+                    this.RaisePropertyChanged("NetSourcePath");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TaskId {
+            get {
+                return this.TaskIdField;
+            }
+            set {
+                if ((this.TaskIdField.Equals(value) != true)) {
+                    this.TaskIdField = value;
+                    this.RaisePropertyChanged("TaskId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Type {
             get {
                 return this.TypeField;
@@ -225,9 +273,6 @@ namespace BackupAdmin.ServerReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private BackupAdmin.ServerReference.tbDaemon DaemonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DaemonIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -255,19 +300,6 @@ namespace BackupAdmin.ServerReference {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public BackupAdmin.ServerReference.tbDaemon Daemon {
-            get {
-                return this.DaemonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DaemonField, value) != true)) {
-                    this.DaemonField = value;
-                    this.RaisePropertyChanged("Daemon");
-                }
             }
         }
         
@@ -578,6 +610,18 @@ namespace BackupAdmin.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReference", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceResponse")]
         System.Threading.Tasks.Task UpdateDeamonReferenceAsync(int id, BackupAdmin.ServerReference.tbDaemon d);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindDestinationByTaskId", ReplyAction="http://tempuri.org/IService1/FindDestinationByTaskIdResponse")]
+        BackupAdmin.ServerReference.tbDestination[] FindDestinationByTaskId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindDestinationByTaskId", ReplyAction="http://tempuri.org/IService1/FindDestinationByTaskIdResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDestination[]> FindDestinationByTaskIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindTaskByDestinationId", ReplyAction="http://tempuri.org/IService1/FindTaskByDestinationIdResponse")]
+        BackupAdmin.ServerReference.tbTask[] FindTaskByDestinationId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindTaskByDestinationId", ReplyAction="http://tempuri.org/IService1/FindTaskByDestinationIdResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbTask[]> FindTaskByDestinationIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ExistDeamonTask", ReplyAction="http://tempuri.org/IService1/ExistDeamonTaskResponse")]
         bool ExistDeamonTask(int id);
         
@@ -716,6 +760,22 @@ namespace BackupAdmin.ServerReference {
         
         public System.Threading.Tasks.Task UpdateDeamonReferenceAsync(int id, BackupAdmin.ServerReference.tbDaemon d) {
             return base.Channel.UpdateDeamonReferenceAsync(id, d);
+        }
+        
+        public BackupAdmin.ServerReference.tbDestination[] FindDestinationByTaskId(int id) {
+            return base.Channel.FindDestinationByTaskId(id);
+        }
+        
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDestination[]> FindDestinationByTaskIdAsync(int id) {
+            return base.Channel.FindDestinationByTaskIdAsync(id);
+        }
+        
+        public BackupAdmin.ServerReference.tbTask[] FindTaskByDestinationId(int id) {
+            return base.Channel.FindTaskByDestinationId(id);
+        }
+        
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbTask[]> FindTaskByDestinationIdAsync(int id) {
+            return base.Channel.FindTaskByDestinationIdAsync(id);
         }
         
         public bool ExistDeamonTask(int id) {
