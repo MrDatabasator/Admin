@@ -33,10 +33,10 @@
             this.textBox_DestinationPath = new System.Windows.Forms.TextBox();
             this.textBox_SourcePath = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_TaskName = new System.Windows.Forms.TextBox();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
-            this.textBox_TaskName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,36 +82,10 @@
             this.groupBox1.Controls.Add(this.textBox_SourcePath);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 118);
+            this.groupBox1.Size = new System.Drawing.Size(374, 110);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Task Configuration";
-            // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Location = new System.Drawing.Point(312, 136);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancel.TabIndex = 2;
-            this.btn_Cancel.Text = "Cancel";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Location = new System.Drawing.Point(231, 136);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
-            this.btn_Save.TabIndex = 3;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
-            // 
-            // textBox_TaskName
-            // 
-            this.textBox_TaskName.Location = new System.Drawing.Point(108, 28);
-            this.textBox_TaskName.Name = "textBox_TaskName";
-            this.textBox_TaskName.Size = new System.Drawing.Size(260, 20);
-            this.textBox_TaskName.TabIndex = 4;
             // 
             // label3
             // 
@@ -122,11 +96,38 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Task Name";
             // 
+            // textBox_TaskName
+            // 
+            this.textBox_TaskName.Location = new System.Drawing.Point(108, 28);
+            this.textBox_TaskName.Name = "textBox_TaskName";
+            this.textBox_TaskName.Size = new System.Drawing.Size(260, 20);
+            this.textBox_TaskName.TabIndex = 4;
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(312, 128);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel.TabIndex = 2;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(231, 128);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save.TabIndex = 3;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
             // Form_AddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 180);
+            this.ClientSize = new System.Drawing.Size(399, 158);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.groupBox1);

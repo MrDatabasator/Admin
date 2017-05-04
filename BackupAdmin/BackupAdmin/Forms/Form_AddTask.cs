@@ -23,7 +23,13 @@ namespace BackupAdmin
             ServerReference.tbDestination sd = new ServerReference.tbDestination();
             st.TaskName = this.textBox_TaskName.Text;
             sd.NetSourcePath = this.textBox_SourcePath.Text;
-            sd.NetDestinationPath = this.textBox_DestinationPath.Text;            
+            sd.NetDestinationPath = this.textBox_DestinationPath.Text;
+            this.DialogResult = DialogResult.OK;    
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }
