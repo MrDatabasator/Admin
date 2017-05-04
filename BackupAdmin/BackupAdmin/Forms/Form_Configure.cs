@@ -35,5 +35,23 @@ namespace BackupAdmin
             textBox_sRefreshRate.Text = Daemon.RefreshRate.ToString();
             _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());
         }
+
+        private void btn_ok_Click(object sender, EventArgs e)
+        {
+            Daemon.RefreshRate = Convert.ToInt32(this.textBox_sRefreshRate.Text);
+            Daemon.DaemonName = this.textBox_daemonName.Text;
+            this.DialogResult = DialogResult.OK;
+            Client.UpdateDeamonReference(Daemon.Id, Daemon);
+            Client.Close();
+        }
+
+        private void btn_viewTasks_Click(object sender, EventArgs e)
+        {
+            Form_Task Add = new Form_Task();
+            if (Add.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }

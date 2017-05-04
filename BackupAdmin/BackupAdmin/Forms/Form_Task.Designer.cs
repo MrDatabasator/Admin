@@ -150,7 +150,6 @@
             this.MinimizeBox = false;
             this.Name = "Form_Task";
             this.Text = "Tasks";
-            this.Load += new System.EventHandler(this.Form_Task_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_tasks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_destinations)).EndInit();
             this.groupBox_tasks.ResumeLayout(false);
