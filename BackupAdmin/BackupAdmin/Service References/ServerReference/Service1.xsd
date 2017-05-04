@@ -128,6 +128,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="NewLogMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DaemonId" type="xs:int" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewLogMessageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDestinations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDestinationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetAllDestinationsResult" nillable="true" type="q7:ArrayOftbDestination" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllDaemons">
     <xs:complexType>
       <xs:sequence />
@@ -136,21 +161,21 @@
   <xs:element name="GetAllDaemonsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetAllDaemonsResult" nillable="true" type="q7:ArrayOftbDaemon" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetAllDaemonsResult" nillable="true" type="q8:ArrayOftbDaemon" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDaemon">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="o" nillable="true" type="q8:tbDaemon" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="o" nillable="true" type="q9:tbDaemon" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDaemonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDaemonResult" nillable="true" type="q9:tbDaemon" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDaemonResult" nillable="true" type="q10:tbDaemon" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -171,14 +196,14 @@
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="composite" nillable="true" type="q10:CompositeType" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="composite" nillable="true" type="q11:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q11:CompositeType" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfService1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q12:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

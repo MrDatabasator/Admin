@@ -67,6 +67,18 @@
   <wsdl:message name="IService1_GetDeamonTask_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeamonTaskResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_NewLogMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewLogMessage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_NewLogMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewLogMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllDestinations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDestinations" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllDestinations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDestinationsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetAllDaemons_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllDaemons" />
   </wsdl:message>
@@ -131,6 +143,14 @@
     <wsdl:operation name="GetDeamonTask">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDeamonTask" message="tns:IService1_GetDeamonTask_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDeamonTaskResponse" message="tns:IService1_GetDeamonTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewLogMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/NewLogMessage" message="tns:IService1_NewLogMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/NewLogMessageResponse" message="tns:IService1_NewLogMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDestinations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllDestinations" message="tns:IService1_GetAllDestinations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllDestinationsResponse" message="tns:IService1_GetAllDestinations_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllDaemons">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllDaemons" message="tns:IService1_GetAllDaemons_InputMessage" />
@@ -234,6 +254,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetDeamonTask">
       <soap:operation soapAction="http://tempuri.org/IService1/GetDeamonTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewLogMessage">
+      <soap:operation soapAction="http://tempuri.org/IService1/NewLogMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDestinations">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllDestinations" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

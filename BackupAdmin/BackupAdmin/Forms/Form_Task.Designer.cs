@@ -48,7 +48,7 @@
             this.grid_tasks.AllowUserToDeleteRows = false;
             this.grid_tasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_tasks.Location = new System.Drawing.Point(4, 17);
-            this.grid_tasks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grid_tasks.Margin = new System.Windows.Forms.Padding(2);
             this.grid_tasks.Name = "grid_tasks";
             this.grid_tasks.ReadOnly = true;
             this.grid_tasks.RowTemplate.Height = 24;
@@ -61,7 +61,7 @@
             this.grid_destinations.AllowUserToDeleteRows = false;
             this.grid_destinations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_destinations.Location = new System.Drawing.Point(4, 17);
-            this.grid_destinations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grid_destinations.Margin = new System.Windows.Forms.Padding(2);
             this.grid_destinations.Name = "grid_destinations";
             this.grid_destinations.ReadOnly = true;
             this.grid_destinations.RowTemplate.Height = 24;
@@ -71,7 +71,7 @@
             // btn_save
             // 
             this.btn_save.Location = new System.Drawing.Point(295, 500);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(60, 24);
             this.btn_save.TabIndex = 5;
@@ -81,7 +81,7 @@
             // btn_remove
             // 
             this.btn_remove.Location = new System.Drawing.Point(166, 500);
-            this.btn_remove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_remove.Margin = new System.Windows.Forms.Padding(2);
             this.btn_remove.Name = "btn_remove";
             this.btn_remove.Size = new System.Drawing.Size(60, 24);
             this.btn_remove.TabIndex = 6;
@@ -91,21 +91,22 @@
             // btn_addTask
             // 
             this.btn_addTask.Location = new System.Drawing.Point(286, 225);
-            this.btn_addTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_addTask.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addTask.Name = "btn_addTask";
             this.btn_addTask.Size = new System.Drawing.Size(60, 24);
             this.btn_addTask.TabIndex = 7;
             this.btn_addTask.Text = "Add Task";
             this.btn_addTask.UseVisualStyleBackColor = true;
+            this.btn_addTask.Click += new System.EventHandler(this.btn_addTask_Click);
             // 
             // groupBox_tasks
             // 
             this.groupBox_tasks.Controls.Add(this.btn_addTask);
             this.groupBox_tasks.Controls.Add(this.grid_tasks);
             this.groupBox_tasks.Location = new System.Drawing.Point(2, 10);
-            this.groupBox_tasks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_tasks.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox_tasks.Name = "groupBox_tasks";
-            this.groupBox_tasks.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_tasks.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox_tasks.Size = new System.Drawing.Size(351, 256);
             this.groupBox_tasks.TabIndex = 8;
             this.groupBox_tasks.TabStop = false;
@@ -115,9 +116,9 @@
             // 
             this.groupBox_destinations.Controls.Add(this.grid_destinations);
             this.groupBox_destinations.Location = new System.Drawing.Point(4, 271);
-            this.groupBox_destinations.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_destinations.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox_destinations.Name = "groupBox_destinations";
-            this.groupBox_destinations.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_destinations.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox_destinations.Size = new System.Drawing.Size(351, 225);
             this.groupBox_destinations.TabIndex = 9;
             this.groupBox_destinations.TabStop = false;
@@ -126,7 +127,7 @@
             // btn_cancel
             // 
             this.btn_cancel.Location = new System.Drawing.Point(230, 500);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(60, 24);
             this.btn_cancel.TabIndex = 10;
@@ -144,7 +145,7 @@
             this.Controls.Add(this.btn_remove);
             this.Controls.Add(this.btn_save);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Task";

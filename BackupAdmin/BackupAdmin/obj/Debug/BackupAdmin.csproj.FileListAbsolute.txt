@@ -43,3 +43,15 @@ C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debu
 C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe
 C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.pdb
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Task.resources
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe.config
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.exe
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.pdb
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.exe
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\bin\Debug\BackupAdmin.pdb
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csprojResolveAssemblyReference.cache
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Configure.resources
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Daemons.resources
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Task.resources
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Properties.Resources.resources
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
+C:\Users\adasdasdasd\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_AddTask.resources

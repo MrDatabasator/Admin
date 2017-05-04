@@ -21,5 +21,14 @@ namespace BackupAdmin
         {
 
         }
+
+        private void btn_addTask_Click(object sender, EventArgs e)
+        {
+            Form_AddTask Add = new Form_AddTask();
+            if (Add.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

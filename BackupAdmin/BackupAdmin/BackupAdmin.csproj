@@ -89,6 +89,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="DataModels\TaskDataModel.cs" />
+    <EmbeddedResource Include="Forms\Form_AddTask.resx">
+      <DependentUpon>Form_AddTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Configure.resx">
       <DependentUpon>Form_Configure.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +123,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbDaemon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbDestination.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbTask.datasource">

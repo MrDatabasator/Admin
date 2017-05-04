@@ -140,7 +140,7 @@ namespace BackupAdmin.ServerReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbDestination", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbDestination", Namespace="http://schemas.datacontract.org/2004/07/WcfService1", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class tbDestination : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -217,7 +217,7 @@ namespace BackupAdmin.ServerReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="tbTask", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tbTask", Namespace="http://schemas.datacontract.org/2004/07/WcfService1", IsReference=true)]
     [System.SerializableAttribute()]
     public partial class tbTask : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -590,6 +590,18 @@ namespace BackupAdmin.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDeamonTask", ReplyAction="http://tempuri.org/IService1/GetDeamonTaskResponse")]
         System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbTask[]> GetDeamonTaskAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NewLogMessage", ReplyAction="http://tempuri.org/IService1/NewLogMessageResponse")]
+        void NewLogMessage(int DaemonId, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NewLogMessage", ReplyAction="http://tempuri.org/IService1/NewLogMessageResponse")]
+        System.Threading.Tasks.Task NewLogMessageAsync(int DaemonId, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDestinations", ReplyAction="http://tempuri.org/IService1/GetAllDestinationsResponse")]
+        BackupAdmin.ServerReference.tbDestination[] GetAllDestinations();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDestinations", ReplyAction="http://tempuri.org/IService1/GetAllDestinationsResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDestination[]> GetAllDestinationsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDaemons", ReplyAction="http://tempuri.org/IService1/GetAllDaemonsResponse")]
         BackupAdmin.ServerReference.tbDaemon[] GetAllDaemons();
         
@@ -720,6 +732,22 @@ namespace BackupAdmin.ServerReference {
         
         public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbTask[]> GetDeamonTaskAsync(int id) {
             return base.Channel.GetDeamonTaskAsync(id);
+        }
+        
+        public void NewLogMessage(int DaemonId, string message) {
+            base.Channel.NewLogMessage(DaemonId, message);
+        }
+        
+        public System.Threading.Tasks.Task NewLogMessageAsync(int DaemonId, string message) {
+            return base.Channel.NewLogMessageAsync(DaemonId, message);
+        }
+        
+        public BackupAdmin.ServerReference.tbDestination[] GetAllDestinations() {
+            return base.Channel.GetAllDestinations();
+        }
+        
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDestination[]> GetAllDestinationsAsync() {
+            return base.Channel.GetAllDestinationsAsync();
         }
         
         public BackupAdmin.ServerReference.tbDaemon[] GetAllDaemons() {
