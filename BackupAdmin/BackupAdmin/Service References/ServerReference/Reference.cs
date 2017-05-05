@@ -592,6 +592,12 @@ namespace BackupAdmin.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTask", ReplyAction="http://tempuri.org/IService1/UploadTaskResponse")]
         System.Threading.Tasks.Task UploadTaskAsync(BackupAdmin.ServerReference.tbTask t);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemonReference", ReplyAction="http://tempuri.org/IService1/UploadDaemonReferenceResponse")]
+        int UploadDaemonReference(BackupAdmin.ServerReference.tbDaemon o);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadDaemonReference", ReplyAction="http://tempuri.org/IService1/UploadDaemonReferenceResponse")]
+        System.Threading.Tasks.Task<int> UploadDaemonReferenceAsync(BackupAdmin.ServerReference.tbDaemon o);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDaemonLastActive", ReplyAction="http://tempuri.org/IService1/UpdateDaemonLastActiveResponse")]
         void UpdateDaemonLastActive(int id);
         
@@ -651,6 +657,12 @@ namespace BackupAdmin.ServerReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDaemons", ReplyAction="http://tempuri.org/IService1/GetAllDaemonsResponse")]
         System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon[]> GetAllDaemonsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTaskReference", ReplyAction="http://tempuri.org/IService1/UploadTaskReferenceResponse")]
+        int UploadTaskReference(BackupAdmin.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTaskReference", ReplyAction="http://tempuri.org/IService1/UploadTaskReferenceResponse")]
+        System.Threading.Tasks.Task<int> UploadTaskReferenceAsync(BackupAdmin.ServerReference.tbTask t);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemon", ReplyAction="http://tempuri.org/IService1/GetDaemonResponse")]
         BackupAdmin.ServerReference.tbDaemon GetDaemon(BackupAdmin.ServerReference.tbDaemon o);
@@ -738,6 +750,14 @@ namespace BackupAdmin.ServerReference {
             return base.Channel.UploadTaskAsync(t);
         }
         
+        public int UploadDaemonReference(BackupAdmin.ServerReference.tbDaemon o) {
+            return base.Channel.UploadDaemonReference(o);
+        }
+        
+        public System.Threading.Tasks.Task<int> UploadDaemonReferenceAsync(BackupAdmin.ServerReference.tbDaemon o) {
+            return base.Channel.UploadDaemonReferenceAsync(o);
+        }
+        
         public void UpdateDaemonLastActive(int id) {
             base.Channel.UpdateDaemonLastActive(id);
         }
@@ -816,6 +836,14 @@ namespace BackupAdmin.ServerReference {
         
         public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon[]> GetAllDaemonsAsync() {
             return base.Channel.GetAllDaemonsAsync();
+        }
+        
+        public int UploadTaskReference(BackupAdmin.ServerReference.tbTask t) {
+            return base.Channel.UploadTaskReference(t);
+        }
+        
+        public System.Threading.Tasks.Task<int> UploadTaskReferenceAsync(BackupAdmin.ServerReference.tbTask t) {
+            return base.Channel.UploadTaskReferenceAsync(t);
         }
         
         public BackupAdmin.ServerReference.tbDaemon GetDaemon(BackupAdmin.ServerReference.tbDaemon o) {

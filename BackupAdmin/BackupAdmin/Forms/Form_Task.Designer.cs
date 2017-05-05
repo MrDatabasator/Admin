@@ -54,6 +54,7 @@
             this.grid_tasks.RowTemplate.Height = 24;
             this.grid_tasks.Size = new System.Drawing.Size(342, 203);
             this.grid_tasks.TabIndex = 0;
+            this.grid_tasks.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_tasks_CellMouseClick);
             // 
             // grid_destinations
             // 

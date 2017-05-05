@@ -47,7 +47,7 @@ namespace BackupAdmin
 
         private void btn_viewTasks_Click(object sender, EventArgs e)
         {
-            Form_Task Add = new Form_Task();
+            Form_Task Add = new Form_Task(Client,Daemon);
             if (Add.ShowDialog() == DialogResult.OK)
             {
                 
