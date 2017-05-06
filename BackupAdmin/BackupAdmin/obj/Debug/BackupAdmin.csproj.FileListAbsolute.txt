@@ -67,3 +67,4 @@ C:\Users\novakpatrik\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\Backup
 C:\Users\novakpatrik\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_Task.resources
 C:\Users\novakpatrik\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Properties.Resources.resources
 C:\Users\novakpatrik\Source\Repos\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.csproj.GenerateResource.Cache
+C:\Soubory\MiniMe\Programování\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_AddTask.resources

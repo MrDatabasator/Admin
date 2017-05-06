@@ -12,7 +12,9 @@ namespace BackupAdmin
 {
     public partial class Form_Daemons : Form
     {
-        DaemonDataModel _model = new DaemonDataModel();
+        private const int GridRefresh = 5;
+        private int TimeTick = 0;
+        DaemonDataModel _model = new DaemonDataModel();        
         ServerReference.Service1Client Client { get; set; }
 
         public Form_Daemons()
@@ -25,46 +27,59 @@ namespace BackupAdmin
             //grid_daemons.AutoResizeColumns();
             //SendDaemonTest();
             //SendStringTest();
-            LoadAllDaemons();
+            LoadDaemons();
         }
-        public void SendDaemonTest()
-        {            
-            ServerReference.tbDaemon test = new ServerReference.tbDaemon();
-            test.DaemonName = "Daemon1";
-            test.PcName = "pc1";
-            test.IpAddress = "127.0.0.1";           
-            
-            //_model.ShowData(new List<ServerReference.tbDaemon>() { Client.GetDaemon(test) });
-        }
-        public void SendStringTest()
-        {            
-            //Client.UploadString("Foo Bar");
-            Client.UpdateDaemonLastActive(8);
-        }
-        public void LoadAllDaemons()
-        {            
-            _model.ShowData(Client.GetAllDaemons().ToList());
+
+        public void LoadDaemons()
+        {
+            if (chBox_LoadOffline.Checked)
+                _model.ShowData(Client.GetAllDaemons().ToList());
+            else
+                _model.ShowData(Client.GetAllDaemons()
+                    .Where(x => x.LastActive >= DateTime.Now.AddMinutes(-6)).ToList());
         }
 
         private void btn_manage_MouseClick(object sender, MouseEventArgs e)
         {
-            /*try
-            {*/
+            if (grid_daemons.CurrentRow != null)
+            {
                 Form_Configure fConfig = new Form_Configure(_model.GetDaemon(grid_daemons.CurrentRow.Index));
                 if (fConfig.ShowDialog() == DialogResult.OK)
                 {
 
                 }
-            /*}
-            catch(Exception ex)
-            {
-
-            }*/
+            }           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Refresh_Click(object sender, EventArgs e)
         {
             _model.ShowData(Client.GetAllDaemons().ToList());
+        }
+
+        private void tmr_refresh_Tick(object sender, EventArgs e)
+        {
+            TimeTick++;
+            if(TimeTick >= GridRefresh)
+            {
+                try
+                {
+                    int tempRow = grid_daemons.CurrentCell.RowIndex;
+                    int TempCell = grid_daemons.CurrentCell.ColumnIndex;                    
+                    LoadDaemons();
+                    grid_daemons.CurrentCell = grid_daemons.Rows[tempRow].Cells[TempCell];
+                }
+                catch(Exception ex)
+                {
+                    LoadDaemons();
+                }
+                
+                
+            }
+        }
+
+        private void chBox_LoadOffline_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadDaemons();
         }
     }
 }
