@@ -89,13 +89,13 @@ namespace BackupAdmin
         private void btn_des_remove_Click(object sender, EventArgs e)
         {
             if (grid_destinations.CurrentCell != null)
-                Client.DeleteDestination(_desmodel.GetDestination(grid_destinations.CurrentRow.Index));
+               // Client.DeleteDestination(_desmodel.GetDestination(grid_destinations.CurrentRow.Index));
         }
 
         private void btn_task_remove_Click(object sender, EventArgs e)
         {
             if (grid_tasks.CurrentCell != null)
-                Client.AutoDeleteTask(_model.GetTask(grid_tasks.CurrentRow.Index));
+               // Client.AutoDeleteTask(_model.GetTask(grid_tasks.CurrentRow.Index));
         }
 
         private void tmr_refresh_Tick(object sender, EventArgs e)
