@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox_sRefreshRate = new System.Windows.Forms.TextBox();
             this.label_sRefreshRate = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.btn_viewTasks = new System.Windows.Forms.Button();
             this.grid_tasks = new System.Windows.Forms.DataGridView();
             this.btn_ok = new System.Windows.Forms.Button();
+            this.tmr_taskRefresh = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_tasks)).BeginInit();
@@ -49,9 +51,9 @@
             this.groupBox1.Controls.Add(this.textBox_daemonName);
             this.groupBox1.Controls.Add(this.label_name);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(380, 101);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -60,7 +62,7 @@
             // textBox_sRefreshRate
             // 
             this.textBox_sRefreshRate.Location = new System.Drawing.Point(164, 46);
-            this.textBox_sRefreshRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_sRefreshRate.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_sRefreshRate.Name = "textBox_sRefreshRate";
             this.textBox_sRefreshRate.Size = new System.Drawing.Size(100, 20);
             this.textBox_sRefreshRate.TabIndex = 3;
@@ -78,7 +80,7 @@
             // textBox_daemonName
             // 
             this.textBox_daemonName.Location = new System.Drawing.Point(97, 22);
-            this.textBox_daemonName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_daemonName.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_daemonName.Name = "textBox_daemonName";
             this.textBox_daemonName.Size = new System.Drawing.Size(167, 20);
             this.textBox_daemonName.TabIndex = 1;
@@ -98,9 +100,9 @@
             this.groupBox2.Controls.Add(this.btn_viewTasks);
             this.groupBox2.Controls.Add(this.grid_tasks);
             this.groupBox2.Location = new System.Drawing.Point(9, 115);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(380, 266);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -137,6 +139,12 @@
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
+            // tmr_taskRefresh
+            // 
+            this.tmr_taskRefresh.Enabled = true;
+            this.tmr_taskRefresh.Interval = 1000;
+            this.tmr_taskRefresh.Tick += new System.EventHandler(this.tmr_taskRefresh_Tick);
+            // 
             // Form_Configure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,7 +154,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Configure";
@@ -170,5 +178,6 @@
         private System.Windows.Forms.DataGridView grid_tasks;
         private System.Windows.Forms.Button btn_viewTasks;
         private System.Windows.Forms.Button btn_ok;
+        private System.Windows.Forms.Timer tmr_taskRefresh;
     }
 }

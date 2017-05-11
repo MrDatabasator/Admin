@@ -53,7 +53,6 @@
   <xs:element name="ArrayOftbDestination" nillable="true" type="tns:ArrayOftbDestination" />
   <xs:complexType name="tbLog">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Daemon" nillable="true" type="tns:tbDaemon" />
       <xs:element minOccurs="0" name="DaemonId" type="xs:int" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />

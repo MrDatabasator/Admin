@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grid_tasks = new System.Windows.Forms.DataGridView();
             this.grid_destinations = new System.Windows.Forms.DataGridView();
             this.btn_save = new System.Windows.Forms.Button();
-            this.btn_remove = new System.Windows.Forms.Button();
+            this.btn_des_remove = new System.Windows.Forms.Button();
             this.btn_addTask = new System.Windows.Forms.Button();
             this.groupBox_tasks = new System.Windows.Forms.GroupBox();
+            this.btn_task_remove = new System.Windows.Forms.Button();
             this.groupBox_destinations = new System.Windows.Forms.GroupBox();
             this.btn_cancel = new System.Windows.Forms.Button();
+            this.tmr_refresh = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grid_tasks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_destinations)).BeginInit();
             this.groupBox_tasks.SuspendLayout();
@@ -79,15 +82,16 @@
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             // 
-            // btn_remove
+            // btn_des_remove
             // 
-            this.btn_remove.Location = new System.Drawing.Point(166, 500);
-            this.btn_remove.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_remove.Name = "btn_remove";
-            this.btn_remove.Size = new System.Drawing.Size(60, 24);
-            this.btn_remove.TabIndex = 6;
-            this.btn_remove.Text = "Remove";
-            this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_des_remove.Location = new System.Drawing.Point(166, 500);
+            this.btn_des_remove.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_des_remove.Name = "btn_des_remove";
+            this.btn_des_remove.Size = new System.Drawing.Size(60, 24);
+            this.btn_des_remove.TabIndex = 6;
+            this.btn_des_remove.Text = "Remove";
+            this.btn_des_remove.UseVisualStyleBackColor = true;
+            this.btn_des_remove.Click += new System.EventHandler(this.btn_des_remove_Click);
             // 
             // btn_addTask
             // 
@@ -102,6 +106,7 @@
             // 
             // groupBox_tasks
             // 
+            this.groupBox_tasks.Controls.Add(this.btn_task_remove);
             this.groupBox_tasks.Controls.Add(this.btn_addTask);
             this.groupBox_tasks.Controls.Add(this.grid_tasks);
             this.groupBox_tasks.Location = new System.Drawing.Point(2, 10);
@@ -112,6 +117,17 @@
             this.groupBox_tasks.TabIndex = 8;
             this.groupBox_tasks.TabStop = false;
             this.groupBox_tasks.Text = "Tasks";
+            // 
+            // btn_task_remove
+            // 
+            this.btn_task_remove.Location = new System.Drawing.Point(222, 225);
+            this.btn_task_remove.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_task_remove.Name = "btn_task_remove";
+            this.btn_task_remove.Size = new System.Drawing.Size(60, 24);
+            this.btn_task_remove.TabIndex = 11;
+            this.btn_task_remove.Text = "Remove";
+            this.btn_task_remove.UseVisualStyleBackColor = true;
+            this.btn_task_remove.Click += new System.EventHandler(this.btn_task_remove_Click);
             // 
             // groupBox_destinations
             // 
@@ -135,6 +151,12 @@
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             // 
+            // tmr_refresh
+            // 
+            this.tmr_refresh.Enabled = true;
+            this.tmr_refresh.Interval = 1000;
+            this.tmr_refresh.Tick += new System.EventHandler(this.tmr_refresh_Tick);
+            // 
             // Form_Task
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,7 +165,7 @@
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.groupBox_destinations);
             this.Controls.Add(this.groupBox_tasks);
-            this.Controls.Add(this.btn_remove);
+            this.Controls.Add(this.btn_des_remove);
             this.Controls.Add(this.btn_save);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -164,10 +186,12 @@
         private System.Windows.Forms.DataGridView grid_tasks;
         private System.Windows.Forms.DataGridView grid_destinations;
         private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Button btn_des_remove;
         private System.Windows.Forms.Button btn_addTask;
         private System.Windows.Forms.GroupBox groupBox_tasks;
         private System.Windows.Forms.GroupBox groupBox_destinations;
         private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_task_remove;
+        private System.Windows.Forms.Timer tmr_refresh;
     }
 }

@@ -12,7 +12,7 @@ namespace BackupAdmin
 {
     public partial class Form_Daemons : Form
     {
-        private const int GridRefresh = 5;
+        private const int GridRefresh = 3;
         private int TimeTick = 0;
         DaemonDataModel _model = new DaemonDataModel();        
         ServerReference.Service1Client Client { get; set; }
@@ -46,15 +46,10 @@ namespace BackupAdmin
                 Form_Configure fConfig = new Form_Configure(_model.GetDaemon(grid_daemons.CurrentRow.Index));
                 if (fConfig.ShowDialog() == DialogResult.OK)
                 {
-
+                    LoadDaemons();
                 }
             }           
-        }
-
-        private void btn_Refresh_Click(object sender, EventArgs e)
-        {
-            _model.ShowData(Client.GetAllDaemons().ToList());
-        }
+        }       
 
         private void tmr_refresh_Tick(object sender, EventArgs e)
         {
@@ -65,15 +60,17 @@ namespace BackupAdmin
                 {
                     int tempRow = grid_daemons.CurrentCell.RowIndex;
                     int TempCell = grid_daemons.CurrentCell.ColumnIndex;                    
+                    int TempHScrollPos = grid_daemons.HorizontalScrollingOffset;
                     LoadDaemons();
                     grid_daemons.CurrentCell = grid_daemons.Rows[tempRow].Cells[TempCell];
+                    grid_daemons.HorizontalScrollingOffset = TempHScrollPos;
+                    
                 }
                 catch(Exception ex)
                 {
                     LoadDaemons();
                 }
-                
-                
+                TimeTick = 0;
             }
         }
 

@@ -14,6 +14,8 @@ namespace BackupAdmin
     {
         private TaskDataModel _model = new TaskDataModel();
 
+        private const int GridRefresh = 3;
+        private int TimeTick = 0;
         private ServerReference.tbDaemon Daemon { get; set; }
         private ServerReference.Service1Client Client = new ServerReference.Service1Client();
 
@@ -33,6 +35,11 @@ namespace BackupAdmin
         {
             textBox_daemonName.Text = Daemon.DaemonName;
             textBox_sRefreshRate.Text = Daemon.RefreshRate.ToString();
+            ShowAllTasks();
+        }
+
+        private void ShowAllTasks()
+        {
             _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());
         }
 
@@ -50,8 +57,31 @@ namespace BackupAdmin
             Form_Task Add = new Form_Task(Client,Daemon);
             if (Add.ShowDialog() == DialogResult.OK)
             {
-                
+                ShowAllTasks();
             }
         }
+
+        private void tmr_taskRefresh_Tick(object sender, EventArgs e)
+        {
+            TimeTick++;
+            if (TimeTick >= GridRefresh)
+            {
+                try
+                {
+                    int tempRow = grid_tasks.CurrentCell.RowIndex;
+                    int TempCell = grid_tasks.CurrentCell.ColumnIndex;
+                    int TempHScrollPos = grid_tasks.HorizontalScrollingOffset;
+                    ShowAllTasks();
+                    grid_tasks.CurrentCell = grid_tasks.Rows[tempRow].Cells[TempCell];
+                    grid_tasks.HorizontalScrollingOffset = TempHScrollPos;
+                }
+                catch (Exception ex)
+                {
+                    ShowAllTasks();
+                }
+                TimeTick = 0;
+            }
+        }
+
     }
 }
