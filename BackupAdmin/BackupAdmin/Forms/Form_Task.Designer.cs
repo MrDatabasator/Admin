@@ -49,6 +49,9 @@
             // 
             this.grid_tasks.AllowUserToAddRows = false;
             this.grid_tasks.AllowUserToDeleteRows = false;
+            this.grid_tasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grid_tasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_tasks.Location = new System.Drawing.Point(4, 17);
             this.grid_tasks.Margin = new System.Windows.Forms.Padding(2);
@@ -63,6 +66,9 @@
             // 
             this.grid_destinations.AllowUserToAddRows = false;
             this.grid_destinations.AllowUserToDeleteRows = false;
+            this.grid_destinations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grid_destinations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_destinations.Location = new System.Drawing.Point(4, 17);
             this.grid_destinations.Margin = new System.Windows.Forms.Padding(2);
@@ -74,6 +80,7 @@
             // 
             // btn_save
             // 
+            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.Location = new System.Drawing.Point(295, 500);
             this.btn_save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_save.Name = "btn_save";
@@ -84,6 +91,7 @@
             // 
             // btn_des_remove
             // 
+            this.btn_des_remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_des_remove.Location = new System.Drawing.Point(166, 500);
             this.btn_des_remove.Margin = new System.Windows.Forms.Padding(2);
             this.btn_des_remove.Name = "btn_des_remove";
@@ -95,6 +103,7 @@
             // 
             // btn_addTask
             // 
+            this.btn_addTask.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_addTask.Location = new System.Drawing.Point(286, 225);
             this.btn_addTask.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addTask.Name = "btn_addTask";
@@ -106,6 +115,8 @@
             // 
             // groupBox_tasks
             // 
+            this.groupBox_tasks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_tasks.Controls.Add(this.btn_task_remove);
             this.groupBox_tasks.Controls.Add(this.btn_addTask);
             this.groupBox_tasks.Controls.Add(this.grid_tasks);
@@ -120,6 +131,7 @@
             // 
             // btn_task_remove
             // 
+            this.btn_task_remove.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_task_remove.Location = new System.Drawing.Point(222, 225);
             this.btn_task_remove.Margin = new System.Windows.Forms.Padding(2);
             this.btn_task_remove.Name = "btn_task_remove";
@@ -131,6 +143,9 @@
             // 
             // groupBox_destinations
             // 
+            this.groupBox_destinations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox_destinations.Controls.Add(this.grid_destinations);
             this.groupBox_destinations.Location = new System.Drawing.Point(4, 271);
             this.groupBox_destinations.Margin = new System.Windows.Forms.Padding(2);
@@ -143,6 +158,7 @@
             // 
             // btn_cancel
             // 
+            this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cancel.Location = new System.Drawing.Point(230, 500);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_cancel.Name = "btn_cancel";
@@ -167,10 +183,11 @@
             this.Controls.Add(this.groupBox_tasks);
             this.Controls.Add(this.btn_des_remove);
             this.Controls.Add(this.btn_save);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(676, 757);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(213, 563);
             this.Name = "Form_Task";
             this.Text = "Tasks";
             ((System.ComponentModel.ISupportInitialize)(this.grid_tasks)).EndInit();

@@ -56,17 +56,17 @@ namespace BackupAdmin
         {
             if (grid_tasks.CurrentCell != null)
             {
-                if (grid_destinations.CurrentCell != null)
+                /*if (grid_destinations.CurrentCell != null)
                 {
                     DestinationsTempRow = grid_destinations.CurrentCell.RowIndex;
                     DestinationsTempCell = grid_destinations.CurrentCell.ColumnIndex;
-                }
+                }*/
                 int TempHScrollPos = grid_destinations.HorizontalScrollingOffset;
 
                 _desmodel.ShowData(Client.FindDestinationByTaskId(_model.GetTask(grid_tasks.CurrentRow.Index).Id).ToList());
 
-                if(grid_destinations.CurrentCell != null)
-                    grid_destinations.CurrentCell = grid_destinations.Rows[DestinationsTempRow].Cells[DestinationsTempCell];
+               /* if(grid_destinations.CurrentCell != null)
+                    grid_destinations.CurrentCell = grid_destinations.Rows[DestinationsTempRow].Cells[DestinationsTempCell];*/
                 grid_destinations.HorizontalScrollingOffset = TempHScrollPos;
             }
         }
@@ -87,9 +87,11 @@ namespace BackupAdmin
         }
 
         private void btn_des_remove_Click(object sender, EventArgs e)
-        {
+        {           
+
             if (grid_destinations.CurrentCell != null)
             { }
+            // kod odstraneni nefunguje :(
                // Client.DeleteDestination(_desmodel.GetDestination(grid_destinations.CurrentRow.Index));
         }
 
@@ -97,7 +99,9 @@ namespace BackupAdmin
         {
             if (grid_tasks.CurrentCell != null)
             { }
-               // Client.AutoDeleteTask(_model.GetTask(grid_tasks.CurrentRow.Index));
+            // kod odstraneni nefunguje :(
+            //ServerReference.tbTask task = _model.GetTask(grid_tasks.CurrentRow.Index);
+            //Client.AutoDeleteTask(task);
         }
 
         private void tmr_refresh_Tick(object sender, EventArgs e)

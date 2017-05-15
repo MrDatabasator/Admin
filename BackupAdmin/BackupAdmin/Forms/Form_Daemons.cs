@@ -23,6 +23,7 @@ namespace BackupAdmin
             InitializeComponent();
             
             grid_daemons.DataSource = _model;
+            chBox_LoadOffline.Checked = true;
             //grid_daemons.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             //grid_daemons.AutoResizeColumns();
             //SendDaemonTest();
