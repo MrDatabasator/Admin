@@ -148,6 +148,9 @@ namespace BackupAdmin.ServerReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool FullBackupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -172,6 +175,19 @@ namespace BackupAdmin.ServerReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool FullBackup {
+            get {
+                return this.FullBackupField;
+            }
+            set {
+                if ((this.FullBackupField.Equals(value) != true)) {
+                    this.FullBackupField = value;
+                    this.RaisePropertyChanged("FullBackup");
+                }
             }
         }
         

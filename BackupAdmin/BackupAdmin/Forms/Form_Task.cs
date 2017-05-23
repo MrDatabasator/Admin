@@ -25,7 +25,7 @@ namespace BackupAdmin
         private int DestinationsTempCell;
 
         private int TimeTick = 0;
-        private const int GridRefresh = 3;
+        private const int GridRefresh = 10;
         private ServerReference.tbDaemon Daemon { get; set; }
         private ServerReference.tbDestination Dest { get; set; }
         private ServerReference.tbTask Task { get; set; }
@@ -36,7 +36,8 @@ namespace BackupAdmin
         
         public void SetComponents()
         {
-            _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());                            
+            _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());
+            RefreshDestinations();                          
         }
 
         private void btn_addTask_Click(object sender, EventArgs e)
@@ -44,7 +45,8 @@ namespace BackupAdmin
             Form_AddTask Add = new Form_AddTask(Client,Daemon);
             if (Add.ShowDialog() == DialogResult.OK)
             {
-
+                RefreshTasks();
+                RefreshDestinations();
             }
         }
 
@@ -56,17 +58,17 @@ namespace BackupAdmin
         {
             if (grid_tasks.CurrentCell != null)
             {
-                /*if (grid_destinations.CurrentCell != null)
+                if (grid_destinations.CurrentCell != null)
                 {
                     DestinationsTempRow = grid_destinations.CurrentCell.RowIndex;
                     DestinationsTempCell = grid_destinations.CurrentCell.ColumnIndex;
-                }*/
+                }
                 int TempHScrollPos = grid_destinations.HorizontalScrollingOffset;
 
                 _desmodel.ShowData(Client.FindDestinationByTaskId(_model.GetTask(grid_tasks.CurrentRow.Index).Id).ToList());
 
-               /* if(grid_destinations.CurrentCell != null)
-                    grid_destinations.CurrentCell = grid_destinations.Rows[DestinationsTempRow].Cells[DestinationsTempCell];*/
+                if(grid_destinations.CurrentCell != null)
+                    grid_destinations.CurrentCell = grid_destinations.Rows[DestinationsTempRow].Cells[DestinationsTempCell];
                 grid_destinations.HorizontalScrollingOffset = TempHScrollPos;
             }
         }
@@ -87,21 +89,25 @@ namespace BackupAdmin
         }
 
         private void btn_des_remove_Click(object sender, EventArgs e)
-        {           
+        {
 
             if (grid_destinations.CurrentCell != null)
-            { }
-            // kod odstraneni nefunguje :(
-               // Client.DeleteDestination(_desmodel.GetDestination(grid_destinations.CurrentRow.Index));
+            {
+                // kod odstraneni nefunguje :(
+                Client.DeleteDestination(_desmodel.GetDestination(grid_destinations.CurrentRow.Index));
+            }
+            RefreshDestinations();
         }
 
         private void btn_task_remove_Click(object sender, EventArgs e)
         {
             if (grid_tasks.CurrentCell != null)
-            { }
-            // kod odstraneni nefunguje :(
-            //ServerReference.tbTask task = _model.GetTask(grid_tasks.CurrentRow.Index);
-            //Client.AutoDeleteTask(task);
+            {
+                // kod odstraneni nefunguje :(
+                ServerReference.tbTask task = _model.GetTask(grid_tasks.CurrentRow.Index);
+                Client.AutoDeleteTask(task);
+            }
+            RefreshTasks();
         }
 
         private void tmr_refresh_Tick(object sender, EventArgs e)
@@ -115,6 +121,16 @@ namespace BackupAdmin
             }
 
 
+        }
+
+        private void Form_Task_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.tmr_refresh.Stop();
+        }
+
+        private void btn_save_MouseClick(object sender, MouseEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

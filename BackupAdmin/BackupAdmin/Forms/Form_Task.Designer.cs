@@ -88,6 +88,7 @@
             this.btn_save.TabIndex = 5;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_save_MouseClick);
             // 
             // btn_des_remove
             // 
@@ -190,6 +191,7 @@
             this.MinimumSize = new System.Drawing.Size(213, 563);
             this.Name = "Form_Task";
             this.Text = "Tasks";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Task_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.grid_tasks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_destinations)).EndInit();
             this.groupBox_tasks.ResumeLayout(false);
