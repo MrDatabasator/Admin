@@ -38,16 +38,16 @@
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.groupBox_DesConfig = new System.Windows.Forms.GroupBox();
-            this.radioButton_FTP = new System.Windows.Forms.RadioButton();
-            this.radioButton_SSH = new System.Windows.Forms.RadioButton();
-            this.radioButton_Local = new System.Windows.Forms.RadioButton();
-            this.groupBox_desType = new System.Windows.Forms.GroupBox();
-            this.label_username = new System.Windows.Forms.Label();
-            this.label_password = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_ftpSerAddr = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_ftpPass = new System.Windows.Forms.TextBox();
+            this.textBox_ftpUser = new System.Windows.Forms.TextBox();
+            this.label_password = new System.Windows.Forms.Label();
+            this.label_username = new System.Windows.Forms.Label();
+            this.groupBox_desType = new System.Windows.Forms.GroupBox();
+            this.radioButton_Local = new System.Windows.Forms.RadioButton();
+            this.radioButton_SSH = new System.Windows.Forms.RadioButton();
+            this.radioButton_FTP = new System.Windows.Forms.RadioButton();
             this.groupBox_TaskConfig.SuspendLayout();
             this.groupBox_DesConfig.SuspendLayout();
             this.groupBox_desType.SuspendLayout();
@@ -99,18 +99,17 @@
             // label_taskname
             // 
             this.label_taskname.AutoSize = true;
-            this.label_taskname.Location = new System.Drawing.Point(17, 31);
+            this.label_taskname.Location = new System.Drawing.Point(6, 31);
             this.label_taskname.Name = "label_taskname";
             this.label_taskname.Size = new System.Drawing.Size(62, 13);
             this.label_taskname.TabIndex = 5;
             this.label_taskname.Text = "Task Name";
-            this.label_taskname.Click += new System.EventHandler(this.label_taskname_Click);
             // 
             // textBox_TaskName
             // 
-            this.textBox_TaskName.Location = new System.Drawing.Point(108, 28);
+            this.textBox_TaskName.Location = new System.Drawing.Point(74, 28);
             this.textBox_TaskName.Name = "textBox_TaskName";
-            this.textBox_TaskName.Size = new System.Drawing.Size(260, 20);
+            this.textBox_TaskName.Size = new System.Drawing.Size(294, 20);
             this.textBox_TaskName.TabIndex = 4;
             // 
             // btn_Cancel
@@ -135,10 +134,10 @@
             // 
             // groupBox_DesConfig
             // 
-            this.groupBox_DesConfig.Controls.Add(this.textBox3);
+            this.groupBox_DesConfig.Controls.Add(this.textBox_ftpSerAddr);
             this.groupBox_DesConfig.Controls.Add(this.label1);
-            this.groupBox_DesConfig.Controls.Add(this.textBox2);
-            this.groupBox_DesConfig.Controls.Add(this.textBox1);
+            this.groupBox_DesConfig.Controls.Add(this.textBox_ftpPass);
+            this.groupBox_DesConfig.Controls.Add(this.textBox_ftpUser);
             this.groupBox_DesConfig.Controls.Add(this.label_password);
             this.groupBox_DesConfig.Controls.Add(this.label_username);
             this.groupBox_DesConfig.Controls.Add(this.groupBox_desType);
@@ -153,39 +152,53 @@
             this.groupBox_DesConfig.TabStop = false;
             this.groupBox_DesConfig.Text = "Destination Configuration";
             // 
-            // radioButton_FTP
+            // textBox_ftpSerAddr
             // 
-            this.radioButton_FTP.AutoSize = true;
-            this.radioButton_FTP.Location = new System.Drawing.Point(146, 19);
-            this.radioButton_FTP.Name = "radioButton_FTP";
-            this.radioButton_FTP.Size = new System.Drawing.Size(45, 17);
-            this.radioButton_FTP.TabIndex = 4;
-            this.radioButton_FTP.TabStop = true;
-            this.radioButton_FTP.Text = "FTP";
-            this.radioButton_FTP.UseVisualStyleBackColor = true;
+            this.textBox_ftpSerAddr.Location = new System.Drawing.Point(114, 75);
+            this.textBox_ftpSerAddr.Name = "textBox_ftpSerAddr";
+            this.textBox_ftpSerAddr.Size = new System.Drawing.Size(248, 20);
+            this.textBox_ftpSerAddr.TabIndex = 13;
             // 
-            // radioButton_SSH
+            // label1
             // 
-            this.radioButton_SSH.AutoSize = true;
-            this.radioButton_SSH.Enabled = false;
-            this.radioButton_SSH.Location = new System.Drawing.Point(272, 19);
-            this.radioButton_SSH.Name = "radioButton_SSH";
-            this.radioButton_SSH.Size = new System.Drawing.Size(47, 17);
-            this.radioButton_SSH.TabIndex = 5;
-            this.radioButton_SSH.TabStop = true;
-            this.radioButton_SSH.Text = "SSH";
-            this.radioButton_SSH.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "FTP Server Address";
             // 
-            // radioButton_Local
+            // textBox_ftpPass
             // 
-            this.radioButton_Local.AutoSize = true;
-            this.radioButton_Local.Location = new System.Drawing.Point(14, 19);
-            this.radioButton_Local.Name = "radioButton_Local";
-            this.radioButton_Local.Size = new System.Drawing.Size(51, 17);
-            this.radioButton_Local.TabIndex = 6;
-            this.radioButton_Local.TabStop = true;
-            this.radioButton_Local.Text = "Local";
-            this.radioButton_Local.UseVisualStyleBackColor = true;
+            this.textBox_ftpPass.Location = new System.Drawing.Point(101, 127);
+            this.textBox_ftpPass.Name = "textBox_ftpPass";
+            this.textBox_ftpPass.Size = new System.Drawing.Size(260, 20);
+            this.textBox_ftpPass.TabIndex = 11;
+            // 
+            // textBox_ftpUser
+            // 
+            this.textBox_ftpUser.Location = new System.Drawing.Point(101, 101);
+            this.textBox_ftpUser.Name = "textBox_ftpUser";
+            this.textBox_ftpUser.Size = new System.Drawing.Size(260, 20);
+            this.textBox_ftpUser.TabIndex = 10;
+            // 
+            // label_password
+            // 
+            this.label_password.AutoSize = true;
+            this.label_password.Location = new System.Drawing.Point(6, 130);
+            this.label_password.Name = "label_password";
+            this.label_password.Size = new System.Drawing.Size(76, 13);
+            this.label_password.TabIndex = 9;
+            this.label_password.Text = "FTP Password";
+            // 
+            // label_username
+            // 
+            this.label_username.AutoSize = true;
+            this.label_username.Location = new System.Drawing.Point(6, 104);
+            this.label_username.Name = "label_username";
+            this.label_username.Size = new System.Drawing.Size(78, 13);
+            this.label_username.TabIndex = 8;
+            this.label_username.Text = "FTP Username";
             // 
             // groupBox_desType
             // 
@@ -199,53 +212,41 @@
             this.groupBox_desType.TabStop = false;
             this.groupBox_desType.Text = "Destination Type";
             // 
-            // label_username
+            // radioButton_Local
             // 
-            this.label_username.AutoSize = true;
-            this.label_username.Location = new System.Drawing.Point(6, 104);
-            this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(78, 13);
-            this.label_username.TabIndex = 8;
-            this.label_username.Text = "FTP Username";
+            this.radioButton_Local.AutoSize = true;
+            this.radioButton_Local.Location = new System.Drawing.Point(14, 19);
+            this.radioButton_Local.Name = "radioButton_Local";
+            this.radioButton_Local.Size = new System.Drawing.Size(51, 17);
+            this.radioButton_Local.TabIndex = 6;
+            this.radioButton_Local.TabStop = true;
+            this.radioButton_Local.Text = "Local";
+            this.radioButton_Local.UseVisualStyleBackColor = true;
+            this.radioButton_Local.CheckedChanged += new System.EventHandler(this.radioButton_Local_CheckedChanged);
             // 
-            // label_password
+            // radioButton_SSH
             // 
-            this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(6, 130);
-            this.label_password.Name = "label_password";
-            this.label_password.Size = new System.Drawing.Size(76, 13);
-            this.label_password.TabIndex = 9;
-            this.label_password.Text = "FTP Password";
+            this.radioButton_SSH.AutoSize = true;
+            this.radioButton_SSH.Enabled = false;
+            this.radioButton_SSH.Location = new System.Drawing.Point(272, 19);
+            this.radioButton_SSH.Name = "radioButton_SSH";
+            this.radioButton_SSH.Size = new System.Drawing.Size(47, 17);
+            this.radioButton_SSH.TabIndex = 5;
+            this.radioButton_SSH.TabStop = true;
+            this.radioButton_SSH.Text = "SSH";
+            this.radioButton_SSH.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // radioButton_FTP
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(101, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(260, 20);
-            this.textBox2.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "FTP Server Address";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(114, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(248, 20);
-            this.textBox3.TabIndex = 13;
+            this.radioButton_FTP.AutoSize = true;
+            this.radioButton_FTP.Location = new System.Drawing.Point(146, 19);
+            this.radioButton_FTP.Name = "radioButton_FTP";
+            this.radioButton_FTP.Size = new System.Drawing.Size(45, 17);
+            this.radioButton_FTP.TabIndex = 4;
+            this.radioButton_FTP.TabStop = true;
+            this.radioButton_FTP.Text = "FTP";
+            this.radioButton_FTP.UseVisualStyleBackColor = true;
+            this.radioButton_FTP.CheckedChanged += new System.EventHandler(this.radioButton_FTP_CheckedChanged);
             // 
             // Form_AddTask
             // 
@@ -284,10 +285,10 @@
         private System.Windows.Forms.RadioButton radioButton_Local;
         private System.Windows.Forms.RadioButton radioButton_SSH;
         private System.Windows.Forms.RadioButton radioButton_FTP;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_ftpSerAddr;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_ftpPass;
+        private System.Windows.Forms.TextBox textBox_ftpUser;
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.Label label_username;
     }

@@ -67,10 +67,12 @@ namespace BackupAdmin
 
                 _desmodel.ShowData(Client.FindDestinationByTaskId(_model.GetTask(grid_tasks.CurrentRow.Index).Id).ToList());
 
-                if(grid_destinations.CurrentCell != null)
+                if (grid_destinations.CurrentCell != null)
                     grid_destinations.CurrentCell = grid_destinations.Rows[DestinationsTempRow].Cells[DestinationsTempCell];
                 grid_destinations.HorizontalScrollingOffset = TempHScrollPos;
-            }
+            }          
+
+      
         }
         private void RefreshTasks()
         {
@@ -85,6 +87,10 @@ namespace BackupAdmin
 
                 grid_tasks.CurrentCell = grid_tasks.Rows[tempRow].Cells[TempCell];
                 grid_tasks.HorizontalScrollingOffset = TempHScrollPos;
+            }
+            else
+            {
+                _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());
             }
         }
 

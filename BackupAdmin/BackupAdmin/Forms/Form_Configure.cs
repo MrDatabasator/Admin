@@ -14,7 +14,7 @@ namespace BackupAdmin
     {
         private TaskDataModel _model = new TaskDataModel();
 
-        private const int GridRefresh = 3;
+        private const int GridRefresh = 10;
         private int TimeTick = 0;
         private ServerReference.tbDaemon Daemon { get; set; }
         private ServerReference.Service1Client Client = new ServerReference.Service1Client();

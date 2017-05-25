@@ -12,7 +12,7 @@ namespace BackupAdmin
 {
     public partial class Form_Daemons : Form
     {
-        private const int GridRefresh = 3;
+        private const int GridRefresh = 10;
         private int TimeTick = 0;
         DaemonDataModel _model = new DaemonDataModel();        
         ServerReference.Service1Client Client { get; set; }
