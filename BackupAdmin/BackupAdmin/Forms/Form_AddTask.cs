@@ -47,5 +47,10 @@ namespace BackupAdmin
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void label_taskname_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
