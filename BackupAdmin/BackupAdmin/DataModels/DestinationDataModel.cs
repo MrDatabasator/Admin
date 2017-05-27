@@ -49,9 +49,13 @@ namespace BackupAdmin
                 this._data.Add(des);
             }
         }
-        public void UpdateDaemon(int index, ServerReference.tbDestination t)
+        public void UpdateDestination(int index, ServerReference.tbDestination t)
         {
             this._data[index] = t;
+        }
+        public void RemoveDestination(ServerReference.tbDestination d)
+        {
+            this._data.Remove(d);
         }
     }
 }

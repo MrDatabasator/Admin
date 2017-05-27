@@ -52,5 +52,9 @@ namespace BackupAdmin
         {
             this._data[index] = t;
         }
+        public void RemoveTask(ServerReference.tbTask t)
+        {
+            this._data.Remove(t);
+        }
     }
 }

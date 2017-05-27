@@ -52,5 +52,9 @@ namespace BackupAdmin
         {
             this._data[index] = d;
         }
+        public void RemoveDaemon(ServerReference.tbDaemon d)
+        {
+            this._data.Remove(d);
+        }
     }
 }

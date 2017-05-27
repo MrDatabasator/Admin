@@ -17,8 +17,8 @@ namespace BackupAdmin
         private const int GridRefresh = 10;
         private int TimeTick = 0;
         private ServerReference.tbDaemon Daemon { get; set; }
-        private ServerReference.Service1Client Client = new ServerReference.Service1Client();
-
+        private ServerReference.Service1Client Client { get; set; }
+        
         public Form_Configure()
         {
             InitializeComponent();
@@ -40,7 +40,9 @@ namespace BackupAdmin
 
         private void ShowAllTasks()
         {
+            Client = new ServerReference.Service1Client();
             _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());
+            Client.Close();
         }
 
         private void btn_ok_Click(object sender, EventArgs e)
@@ -48,13 +50,14 @@ namespace BackupAdmin
             Daemon.RefreshRate = Convert.ToInt32(this.textBox_sRefreshRate.Text);
             Daemon.DaemonName = this.textBox_daemonName.Text;
             this.DialogResult = DialogResult.OK;
+            Client = new ServerReference.Service1Client();
             Client.UpdateDeamonReference(Daemon.Id, Daemon);
             Client.Close();
         }
 
         private void btn_viewTasks_Click(object sender, EventArgs e)
         {
-            Form_Task Add = new Form_Task(Client,Daemon);
+            Form_Task Add = new Form_Task(Daemon);
             if (Add.ShowDialog() == DialogResult.OK)
             {
                 ShowAllTasks();

@@ -16,11 +16,10 @@ namespace BackupAdmin
         private List<RadioButton> DesButtons { get; set; }
         private ServerReference.tbDaemon Daemon { get; set; }
         private ServerReference.Service1Client Client { get; set; }
-        public Form_AddTask(ServerReference.Service1Client c,ServerReference.tbDaemon d)
+        public Form_AddTask(ServerReference.tbDaemon d)
         {
             InitializeComponent();
-            SetupForm();
-            Client = c;
+            SetupForm();            
             Daemon = d;            
         }
 
@@ -42,10 +41,11 @@ namespace BackupAdmin
                 sd.FtpUsername = textBox_ftpUser.Text;
                 sd.FtpPassword = textBox_ftpPass.Text;
             }
-
+            Client = new ServerReference.Service1Client();
             int i = Client.UploadTaskReference(st);
             sd.TaskId = i;
-            Client.UploadDestination(sd);    
+            Client.UploadDestination(sd);
+            Client.Close();    
 
             this.DialogResult = DialogResult.OK;    
         }
