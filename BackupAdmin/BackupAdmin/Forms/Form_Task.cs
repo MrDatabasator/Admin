@@ -93,7 +93,9 @@ namespace BackupAdmin
             }
             else
             {
+                Client = new ServerReference.Service1Client();
                 _model.ShowData(Client.GetDeamonTask(Daemon.Id).ToList());
+                Client.Close();
             }
         }
 
@@ -102,11 +104,10 @@ namespace BackupAdmin
 
             if (grid_destinations.CurrentCell != null)
             {
-
-                // kod odstraneni nefunguje :(
-                _desmodel.RemoveDestination(_desmodel.GetDestination(grid_destinations.CurrentRow.Index));
+                ServerReference.tbDestination dest = _desmodel.GetDestination(grid_destinations.CurrentRow.Index);
+                _desmodel.RemoveDestination(dest);
                 Client = new ServerReference.Service1Client();
-                Client.DeleteDestination(_desmodel.GetDestination(grid_destinations.CurrentRow.Index));
+                Client.DeleteDestination(dest);
                 Client.Close();
             }
             RefreshDestinations();
@@ -116,7 +117,6 @@ namespace BackupAdmin
         {
             if (grid_tasks.CurrentCell != null)
             {
-                // kod odstraneni nefunguje :(
                 ServerReference.tbTask task = _model.GetTask(grid_tasks.CurrentRow.Index);
                 _model.RemoveTask(task);
                 Client = new ServerReference.Service1Client();
