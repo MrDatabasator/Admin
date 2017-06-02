@@ -56,7 +56,7 @@ namespace BackupAdmin
             DesButtons.Add(radioButton_Local);            
             radioButton_Local.Checked = true;
         }
-        private void SetCheckedRadioButton(RadioButton button)
+        /*private void SetCheckedRadioButton(RadioButton button)
         {
             foreach(RadioButton Button in DesButtons)
             {
@@ -64,11 +64,14 @@ namespace BackupAdmin
                     Button.Checked = false;
             }            
             DesModeChanged(button.Text);
-        }
+        }*/
         private void DesModeChanged(string mode)
         {
             if(mode == "FTP")
             {
+                label_username.Text = " FTP Username";
+                label_password.Text = "FTP Password";
+                label_address.Text = "FTP Server Address";
                 textBox_ftpSerAddr.Enabled = true;
                 textBox_ftpUser.Enabled = true;
                 textBox_ftpPass.Enabled = true;
@@ -76,6 +79,9 @@ namespace BackupAdmin
             }
             else if(mode == "Local")
             {
+                label_username.Text = " Username";
+                label_password.Text = "Password";
+                label_address.Text = "Server Address";
                 textBox_ftpSerAddr.Enabled = false;
                 textBox_ftpUser.Enabled = false;
                 textBox_ftpPass.Enabled = false;
@@ -83,7 +89,13 @@ namespace BackupAdmin
             }
             else
             {
-
+                label_username.Text = " SSH Username";
+                label_password.Text = "SSH Password";
+                label_address.Text = "SSH Server Address";
+                textBox_ftpSerAddr.Enabled = true;
+                textBox_ftpUser.Enabled = true;
+                textBox_ftpPass.Enabled = true;
+                DestinationMode = "SSH";
             }
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -93,12 +105,14 @@ namespace BackupAdmin
 
         private void radioButton_Local_CheckedChanged(object sender, EventArgs e)
         {
-            SetCheckedRadioButton(radioButton_Local);
+            DesModeChanged("Local");
+          //  SetCheckedRadioButton(radioButton_Local);
         }
 
         private void radioButton_FTP_CheckedChanged(object sender, EventArgs e)
         {
-            SetCheckedRadioButton(radioButton_FTP);
+            DesModeChanged("FTP");
+          //  SetCheckedRadioButton(radioButton_FTP);
         }
     }
 }

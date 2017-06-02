@@ -39,7 +39,7 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.groupBox_DesConfig = new System.Windows.Forms.GroupBox();
             this.textBox_ftpSerAddr = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_address = new System.Windows.Forms.Label();
             this.textBox_ftpPass = new System.Windows.Forms.TextBox();
             this.textBox_ftpUser = new System.Windows.Forms.TextBox();
             this.label_password = new System.Windows.Forms.Label();
@@ -73,16 +73,16 @@
             // 
             // textBox_DestinationPath
             // 
-            this.textBox_DestinationPath.Location = new System.Drawing.Point(101, 179);
+            this.textBox_DestinationPath.Location = new System.Drawing.Point(114, 179);
             this.textBox_DestinationPath.Name = "textBox_DestinationPath";
-            this.textBox_DestinationPath.Size = new System.Drawing.Size(260, 20);
+            this.textBox_DestinationPath.Size = new System.Drawing.Size(247, 20);
             this.textBox_DestinationPath.TabIndex = 1;
             // 
             // textBox_SourcePath
             // 
-            this.textBox_SourcePath.Location = new System.Drawing.Point(101, 153);
+            this.textBox_SourcePath.Location = new System.Drawing.Point(114, 153);
             this.textBox_SourcePath.Name = "textBox_SourcePath";
-            this.textBox_SourcePath.Size = new System.Drawing.Size(260, 20);
+            this.textBox_SourcePath.Size = new System.Drawing.Size(247, 20);
             this.textBox_SourcePath.TabIndex = 0;
             // 
             // groupBox_TaskConfig
@@ -135,7 +135,7 @@
             // groupBox_DesConfig
             // 
             this.groupBox_DesConfig.Controls.Add(this.textBox_ftpSerAddr);
-            this.groupBox_DesConfig.Controls.Add(this.label1);
+            this.groupBox_DesConfig.Controls.Add(this.label_address);
             this.groupBox_DesConfig.Controls.Add(this.textBox_ftpPass);
             this.groupBox_DesConfig.Controls.Add(this.textBox_ftpUser);
             this.groupBox_DesConfig.Controls.Add(this.label_password);
@@ -159,27 +159,27 @@
             this.textBox_ftpSerAddr.Size = new System.Drawing.Size(248, 20);
             this.textBox_ftpSerAddr.TabIndex = 13;
             // 
-            // label1
+            // label_address
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "FTP Server Address";
+            this.label_address.AutoSize = true;
+            this.label_address.Location = new System.Drawing.Point(6, 78);
+            this.label_address.Name = "label_address";
+            this.label_address.Size = new System.Drawing.Size(102, 13);
+            this.label_address.TabIndex = 12;
+            this.label_address.Text = "FTP Server Address";
             // 
             // textBox_ftpPass
             // 
-            this.textBox_ftpPass.Location = new System.Drawing.Point(101, 127);
+            this.textBox_ftpPass.Location = new System.Drawing.Point(114, 127);
             this.textBox_ftpPass.Name = "textBox_ftpPass";
-            this.textBox_ftpPass.Size = new System.Drawing.Size(260, 20);
+            this.textBox_ftpPass.Size = new System.Drawing.Size(247, 20);
             this.textBox_ftpPass.TabIndex = 11;
             // 
             // textBox_ftpUser
             // 
-            this.textBox_ftpUser.Location = new System.Drawing.Point(101, 101);
+            this.textBox_ftpUser.Location = new System.Drawing.Point(114, 101);
             this.textBox_ftpUser.Name = "textBox_ftpUser";
-            this.textBox_ftpUser.Size = new System.Drawing.Size(260, 20);
+            this.textBox_ftpUser.Size = new System.Drawing.Size(247, 20);
             this.textBox_ftpUser.TabIndex = 10;
             // 
             // label_password
@@ -286,7 +286,7 @@
         private System.Windows.Forms.RadioButton radioButton_SSH;
         private System.Windows.Forms.RadioButton radioButton_FTP;
         private System.Windows.Forms.TextBox textBox_ftpSerAddr;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_address;
         private System.Windows.Forms.TextBox textBox_ftpPass;
         private System.Windows.Forms.TextBox textBox_ftpUser;
         private System.Windows.Forms.Label label_password;
