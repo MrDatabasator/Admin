@@ -227,7 +227,6 @@
             // radioButton_SSH
             // 
             this.radioButton_SSH.AutoSize = true;
-            this.radioButton_SSH.Enabled = false;
             this.radioButton_SSH.Location = new System.Drawing.Point(272, 19);
             this.radioButton_SSH.Name = "radioButton_SSH";
             this.radioButton_SSH.Size = new System.Drawing.Size(47, 17);
@@ -235,6 +234,7 @@
             this.radioButton_SSH.TabStop = true;
             this.radioButton_SSH.Text = "SSH";
             this.radioButton_SSH.UseVisualStyleBackColor = true;
+            this.radioButton_SSH.CheckedChanged += new System.EventHandler(this.radioButton_SSH_CheckedChanged);
             // 
             // radioButton_FTP
             // 

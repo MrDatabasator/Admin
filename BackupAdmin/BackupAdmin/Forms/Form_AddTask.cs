@@ -69,7 +69,8 @@ namespace BackupAdmin
         {
             if(mode == "FTP")
             {
-                label_username.Text = " FTP Username";
+                label_des.Text = "Destination Path";
+                label_username.Text = "FTP Username";
                 label_password.Text = "FTP Password";
                 label_address.Text = "FTP Server Address";
                 textBox_ftpSerAddr.Enabled = true;
@@ -79,7 +80,8 @@ namespace BackupAdmin
             }
             else if(mode == "Local")
             {
-                label_username.Text = " Username";
+                label_des.Text = "Destination Path";
+                label_username.Text = "Username";
                 label_password.Text = "Password";
                 label_address.Text = "Server Address";
                 textBox_ftpSerAddr.Enabled = false;
@@ -87,11 +89,12 @@ namespace BackupAdmin
                 textBox_ftpPass.Enabled = false;
                 DestinationMode = "Local";
             }
-            else
+            else if (mode == "SSH")
             {
-                label_username.Text = " SSH Username";
+                label_des.Text = "Port";
+                label_username.Text = "SSH Username";
                 label_password.Text = "SSH Password";
-                label_address.Text = "SSH Server Address";
+                label_address.Text = "SSH Hostname";
                 textBox_ftpSerAddr.Enabled = true;
                 textBox_ftpUser.Enabled = true;
                 textBox_ftpPass.Enabled = true;
@@ -113,6 +116,11 @@ namespace BackupAdmin
         {
             DesModeChanged("FTP");
           //  SetCheckedRadioButton(radioButton_FTP);
+        }
+
+        private void radioButton_SSH_CheckedChanged(object sender, EventArgs e)
+        {
+            DesModeChanged("SSH");
         }
     }
 }
