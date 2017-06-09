@@ -55,6 +55,12 @@ namespace BackupAdmin
             DesButtons.Add(radioButton_FTP);
             DesButtons.Add(radioButton_Local);            
             radioButton_Local.Checked = true;
+
+            dtpicker_Time.Format = DateTimePickerFormat.Custom;
+            dtpicker_Time.CustomFormat = "HH':'mm':'ss";
+
+            dtpicker_date.Format = DateTimePickerFormat.Custom;
+            dtpicker_date.CustomFormat = "d'.'MMMM'.'yyyy";
         }
         /*private void SetCheckedRadioButton(RadioButton button)
         {
@@ -123,7 +129,48 @@ namespace BackupAdmin
             DesModeChanged("SSH");
         }
 
-        private void label1_Click(object sender, EventArgs e)
+       
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox_dayloop.Checked)
+            {
+                dtpicker_date.Enabled = false;
+                chListBox_days.Enabled = true;
+            }
+            else
+            {
+                dtpicker_date.Enabled = true;
+                chListBox_days.Enabled = false;
+            }
+        }
+
+        private void label_time_Click(object sender, EventArgs e)
+        {
+
+        }
+        private string CronCreator()
+        {
+
+            string ReturnCron = null;
+            return ReturnCron;
+        }
+
+        private void checkBox_weekloop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_weekloop.Checked)
+            {
+                checkBox_dayloop.Enabled = false;
+                chListBox_days.Enabled = false;
+            }
+            else
+            {
+                checkBox_dayloop.Enabled = true;
+                chListBox_days.Enabled = true;
+            }
+        }
+
+        private void checkBox_monthloop_CheckedChanged(object sender, EventArgs e)
         {
 
         }
