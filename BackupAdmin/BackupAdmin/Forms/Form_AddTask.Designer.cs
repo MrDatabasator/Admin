@@ -48,9 +48,12 @@
             this.radioButton_Local = new System.Windows.Forms.RadioButton();
             this.radioButton_SSH = new System.Windows.Forms.RadioButton();
             this.radioButton_FTP = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox_TaskConfig.SuspendLayout();
             this.groupBox_DesConfig.SuspendLayout();
             this.groupBox_desType.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_des
@@ -91,7 +94,7 @@
             this.groupBox_TaskConfig.Controls.Add(this.textBox_TaskName);
             this.groupBox_TaskConfig.Location = new System.Drawing.Point(12, 12);
             this.groupBox_TaskConfig.Name = "groupBox_TaskConfig";
-            this.groupBox_TaskConfig.Size = new System.Drawing.Size(374, 110);
+            this.groupBox_TaskConfig.Size = new System.Drawing.Size(374, 59);
             this.groupBox_TaskConfig.TabIndex = 1;
             this.groupBox_TaskConfig.TabStop = false;
             this.groupBox_TaskConfig.Text = "Task Configuration";
@@ -114,7 +117,7 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(312, 339);
+            this.btn_Cancel.Location = new System.Drawing.Point(321, 529);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 2;
@@ -124,7 +127,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(231, 339);
+            this.btn_Save.Location = new System.Drawing.Point(240, 529);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 23);
             this.btn_Save.TabIndex = 3;
@@ -145,7 +148,7 @@
             this.groupBox_DesConfig.Controls.Add(this.label_des);
             this.groupBox_DesConfig.Controls.Add(this.textBox_SourcePath);
             this.groupBox_DesConfig.Controls.Add(this.textBox_DestinationPath);
-            this.groupBox_DesConfig.Location = new System.Drawing.Point(12, 128);
+            this.groupBox_DesConfig.Location = new System.Drawing.Point(12, 318);
             this.groupBox_DesConfig.Name = "groupBox_DesConfig";
             this.groupBox_DesConfig.Size = new System.Drawing.Size(375, 205);
             this.groupBox_DesConfig.TabIndex = 4;
@@ -248,11 +251,31 @@
             this.radioButton_FTP.UseVisualStyleBackColor = true;
             this.radioButton_FTP.CheckedChanged += new System.EventHandler(this.radioButton_FTP_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 77);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(374, 235);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Time Table";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Task Name";
+            // 
             // Form_AddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 368);
+            this.ClientSize = new System.Drawing.Size(399, 576);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox_DesConfig);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_Cancel);
@@ -265,6 +288,8 @@
             this.groupBox_DesConfig.PerformLayout();
             this.groupBox_desType.ResumeLayout(false);
             this.groupBox_desType.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +316,7 @@
         private System.Windows.Forms.TextBox textBox_ftpUser;
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.Label label_username;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

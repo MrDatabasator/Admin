@@ -35,7 +35,7 @@ namespace BackupAdmin
             sd.Type = DestinationMode;
             st.DaemonId = Daemon.Id;
             sd.FullBackup = true;
-            if(DestinationMode == "FTP")
+            if(DestinationMode == "FTP" && DestinationMode == "SSH")
             {
                 sd.FtpServerAddress = textBox_ftpSerAddr.Text;
                 sd.FtpUsername = textBox_ftpUser.Text;
