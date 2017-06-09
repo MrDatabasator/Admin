@@ -51,7 +51,7 @@ namespace BackupAdmin
             Daemon.DaemonName = this.textBox_daemonName.Text;
             this.DialogResult = DialogResult.OK;
             Client = new ServerReference.Service1Client();
-            Client.UpdateDeamonReference(Daemon.Id, Daemon);
+            Client.UpdateDeamonReferenceUpload(Daemon);
             Client.Close();
         }
 

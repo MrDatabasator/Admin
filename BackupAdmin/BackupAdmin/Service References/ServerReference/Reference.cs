@@ -658,11 +658,23 @@ namespace BackupAdmin.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CheckDeamonReference", ReplyAction="http://tempuri.org/IService1/CheckDeamonReferenceResponse")]
         System.Threading.Tasks.Task<bool> CheckDeamonReferenceAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReference", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceResponse")]
-        void UpdateDeamonReference(int id, BackupAdmin.ServerReference.tbDaemon d);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DaemonReferenceOutdated", ReplyAction="http://tempuri.org/IService1/DaemonReferenceOutdatedResponse")]
+        bool DaemonReferenceOutdated(int id, BackupAdmin.ServerReference.tbDaemon d);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReference", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceResponse")]
-        System.Threading.Tasks.Task UpdateDeamonReferenceAsync(int id, BackupAdmin.ServerReference.tbDaemon d);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DaemonReferenceOutdated", ReplyAction="http://tempuri.org/IService1/DaemonReferenceOutdatedResponse")]
+        System.Threading.Tasks.Task<bool> DaemonReferenceOutdatedAsync(int id, BackupAdmin.ServerReference.tbDaemon d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReferenceUpload", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceUploadResponse")]
+        void UpdateDeamonReferenceUpload(BackupAdmin.ServerReference.tbDaemon d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReferenceUpload", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceUploadResponse")]
+        System.Threading.Tasks.Task UpdateDeamonReferenceUploadAsync(BackupAdmin.ServerReference.tbDaemon d);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReferenceGet", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceGetResponse")]
+        BackupAdmin.ServerReference.tbDaemon UpdateDeamonReferenceGet(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDeamonReferenceGet", ReplyAction="http://tempuri.org/IService1/UpdateDeamonReferenceGetResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon> UpdateDeamonReferenceGetAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/FindDestinationByTaskId", ReplyAction="http://tempuri.org/IService1/FindDestinationByTaskIdResponse")]
         BackupAdmin.ServerReference.tbDestination[] FindDestinationByTaskId(int id);
@@ -858,12 +870,28 @@ namespace BackupAdmin.ServerReference {
             return base.Channel.CheckDeamonReferenceAsync(id);
         }
         
-        public void UpdateDeamonReference(int id, BackupAdmin.ServerReference.tbDaemon d) {
-            base.Channel.UpdateDeamonReference(id, d);
+        public bool DaemonReferenceOutdated(int id, BackupAdmin.ServerReference.tbDaemon d) {
+            return base.Channel.DaemonReferenceOutdated(id, d);
         }
         
-        public System.Threading.Tasks.Task UpdateDeamonReferenceAsync(int id, BackupAdmin.ServerReference.tbDaemon d) {
-            return base.Channel.UpdateDeamonReferenceAsync(id, d);
+        public System.Threading.Tasks.Task<bool> DaemonReferenceOutdatedAsync(int id, BackupAdmin.ServerReference.tbDaemon d) {
+            return base.Channel.DaemonReferenceOutdatedAsync(id, d);
+        }
+        
+        public void UpdateDeamonReferenceUpload(BackupAdmin.ServerReference.tbDaemon d) {
+            base.Channel.UpdateDeamonReferenceUpload(d);
+        }
+        
+        public System.Threading.Tasks.Task UpdateDeamonReferenceUploadAsync(BackupAdmin.ServerReference.tbDaemon d) {
+            return base.Channel.UpdateDeamonReferenceUploadAsync(d);
+        }
+        
+        public BackupAdmin.ServerReference.tbDaemon UpdateDeamonReferenceGet(int id) {
+            return base.Channel.UpdateDeamonReferenceGet(id);
+        }
+        
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon> UpdateDeamonReferenceGetAsync(int id) {
+            return base.Channel.UpdateDeamonReferenceGetAsync(id);
         }
         
         public BackupAdmin.ServerReference.tbDestination[] FindDestinationByTaskId(int id) {
