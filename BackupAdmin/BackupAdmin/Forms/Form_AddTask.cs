@@ -35,7 +35,7 @@ namespace BackupAdmin
             sd.Type = DestinationMode;
             st.DaemonId = Daemon.Id;
             sd.FullBackup = true;
-            if(DestinationMode == "FTP" && DestinationMode == "SSH")
+            if(DestinationMode == "FTP" || DestinationMode == "SSH")
             {
                 sd.FtpServerAddress = textBox_ftpSerAddr.Text;
                 sd.FtpUsername = textBox_ftpUser.Text;
@@ -121,6 +121,11 @@ namespace BackupAdmin
         private void radioButton_SSH_CheckedChanged(object sender, EventArgs e)
         {
             DesModeChanged("SSH");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
