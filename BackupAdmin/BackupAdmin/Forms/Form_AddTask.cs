@@ -172,7 +172,14 @@ namespace BackupAdmin
 
         private void checkBox_monthloop_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBox_monthloop.Checked)
+            {
+                
+            }
+            else
+            {
+                
+            }
         }
     }
 }
