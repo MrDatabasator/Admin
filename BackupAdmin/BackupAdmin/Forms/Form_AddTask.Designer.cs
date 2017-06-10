@@ -38,6 +38,9 @@
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.groupBox_DesConfig = new System.Windows.Forms.GroupBox();
+            this.btn_ClearDesConfig = new System.Windows.Forms.Button();
+            this.label_workingdir = new System.Windows.Forms.Label();
+            this.textBox_workingDir = new System.Windows.Forms.TextBox();
             this.btn_addDes = new System.Windows.Forms.Button();
             this.textBox_ftpSerAddr = new System.Windows.Forms.TextBox();
             this.label_address = new System.Windows.Forms.Label();
@@ -50,24 +53,27 @@
             this.radioButton_SSH = new System.Windows.Forms.RadioButton();
             this.radioButton_FTP = new System.Windows.Forms.RadioButton();
             this.groupBox_timetable = new System.Windows.Forms.GroupBox();
-            this.checkBox_monthloop = new System.Windows.Forms.CheckBox();
-            this.label_monthloop = new System.Windows.Forms.Label();
-            this.checkBox_weekloop = new System.Windows.Forms.CheckBox();
-            this.label_weekloop = new System.Windows.Forms.Label();
-            this.dtpicker_date = new System.Windows.Forms.DateTimePicker();
-            this.label_date = new System.Windows.Forms.Label();
-            this.checkBox_dayloop = new System.Windows.Forms.CheckBox();
+            this.label_dayloop = new System.Windows.Forms.Label();
+            this.checkBox_loop = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton_monthlyloop = new System.Windows.Forms.RadioButton();
+            this.radioButton_weeklyloop = new System.Windows.Forms.RadioButton();
+            this.radioButton_dailyloop = new System.Windows.Forms.RadioButton();
             this.chListBox_days = new System.Windows.Forms.CheckedListBox();
             this.label_days = new System.Windows.Forms.Label();
-            this.label_dayloop = new System.Windows.Forms.Label();
+            this.dtpicker_date = new System.Windows.Forms.DateTimePicker();
+            this.label_date = new System.Windows.Forms.Label();
             this.dtpicker_Time = new System.Windows.Forms.DateTimePicker();
             this.label_time = new System.Windows.Forms.Label();
-            this.label_workingdir = new System.Windows.Forms.Label();
-            this.textBox_workingDir = new System.Windows.Forms.TextBox();
+            this.listBox_destinations = new System.Windows.Forms.ListBox();
+            this.btn_removeDes = new System.Windows.Forms.Button();
+            this.groupBox_Destinations = new System.Windows.Forms.GroupBox();
             this.groupBox_TaskConfig.SuspendLayout();
             this.groupBox_DesConfig.SuspendLayout();
             this.groupBox_desType.SuspendLayout();
             this.groupBox_timetable.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox_Destinations.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_des
@@ -124,14 +130,14 @@
             // 
             // textBox_TaskName
             // 
-            this.textBox_TaskName.Location = new System.Drawing.Point(74, 28);
+            this.textBox_TaskName.Location = new System.Drawing.Point(94, 28);
             this.textBox_TaskName.Name = "textBox_TaskName";
-            this.textBox_TaskName.Size = new System.Drawing.Size(294, 20);
+            this.textBox_TaskName.Size = new System.Drawing.Size(274, 20);
             this.textBox_TaskName.TabIndex = 4;
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(312, 603);
+            this.btn_Cancel.Location = new System.Drawing.Point(311, 704);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 2;
@@ -141,7 +147,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(231, 603);
+            this.btn_Save.Location = new System.Drawing.Point(311, 675);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 23);
             this.btn_Save.TabIndex = 3;
@@ -151,6 +157,7 @@
             // 
             // groupBox_DesConfig
             // 
+            this.groupBox_DesConfig.Controls.Add(this.btn_ClearDesConfig);
             this.groupBox_DesConfig.Controls.Add(this.label_workingdir);
             this.groupBox_DesConfig.Controls.Add(this.textBox_workingDir);
             this.groupBox_DesConfig.Controls.Add(this.btn_addDes);
@@ -165,21 +172,48 @@
             this.groupBox_DesConfig.Controls.Add(this.label_des);
             this.groupBox_DesConfig.Controls.Add(this.textBox_SourcePath);
             this.groupBox_DesConfig.Controls.Add(this.textBox_DestinationPath);
-            this.groupBox_DesConfig.Location = new System.Drawing.Point(12, 282);
+            this.groupBox_DesConfig.Location = new System.Drawing.Point(12, 339);
             this.groupBox_DesConfig.Name = "groupBox_DesConfig";
             this.groupBox_DesConfig.Size = new System.Drawing.Size(375, 258);
             this.groupBox_DesConfig.TabIndex = 4;
             this.groupBox_DesConfig.TabStop = false;
             this.groupBox_DesConfig.Text = "Destination Configuration";
             // 
+            // btn_ClearDesConfig
+            // 
+            this.btn_ClearDesConfig.Location = new System.Drawing.Point(138, 229);
+            this.btn_ClearDesConfig.Name = "btn_ClearDesConfig";
+            this.btn_ClearDesConfig.Size = new System.Drawing.Size(75, 23);
+            this.btn_ClearDesConfig.TabIndex = 19;
+            this.btn_ClearDesConfig.Text = "Clear";
+            this.btn_ClearDesConfig.UseVisualStyleBackColor = true;
+            this.btn_ClearDesConfig.Click += new System.EventHandler(this.btn_ClearDesConfig_Click);
+            // 
+            // label_workingdir
+            // 
+            this.label_workingdir.AutoSize = true;
+            this.label_workingdir.Location = new System.Drawing.Point(6, 206);
+            this.label_workingdir.Name = "label_workingdir";
+            this.label_workingdir.Size = new System.Drawing.Size(117, 13);
+            this.label_workingdir.TabIndex = 15;
+            this.label_workingdir.Text = "SSH Working Directory";
+            // 
+            // textBox_workingDir
+            // 
+            this.textBox_workingDir.Location = new System.Drawing.Point(129, 203);
+            this.textBox_workingDir.Name = "textBox_workingDir";
+            this.textBox_workingDir.Size = new System.Drawing.Size(232, 20);
+            this.textBox_workingDir.TabIndex = 14;
+            // 
             // btn_addDes
             // 
-            this.btn_addDes.Location = new System.Drawing.Point(219, 229);
+            this.btn_addDes.Location = new System.Drawing.Point(218, 229);
             this.btn_addDes.Name = "btn_addDes";
-            this.btn_addDes.Size = new System.Drawing.Size(143, 23);
+            this.btn_addDes.Size = new System.Drawing.Size(144, 23);
             this.btn_addDes.TabIndex = 6;
-            this.btn_addDes.Text = "Add Destination";
+            this.btn_addDes.Text = "Save and Add Destination";
             this.btn_addDes.UseVisualStyleBackColor = true;
+            this.btn_addDes.Click += new System.EventHandler(this.btn_addDes_Click);
             // 
             // textBox_ftpSerAddr
             // 
@@ -279,62 +313,106 @@
             // 
             // groupBox_timetable
             // 
-            this.groupBox_timetable.Controls.Add(this.checkBox_monthloop);
-            this.groupBox_timetable.Controls.Add(this.label_monthloop);
-            this.groupBox_timetable.Controls.Add(this.checkBox_weekloop);
-            this.groupBox_timetable.Controls.Add(this.label_weekloop);
+            this.groupBox_timetable.Controls.Add(this.label_dayloop);
+            this.groupBox_timetable.Controls.Add(this.checkBox_loop);
+            this.groupBox_timetable.Controls.Add(this.groupBox1);
             this.groupBox_timetable.Controls.Add(this.dtpicker_date);
             this.groupBox_timetable.Controls.Add(this.label_date);
-            this.groupBox_timetable.Controls.Add(this.checkBox_dayloop);
-            this.groupBox_timetable.Controls.Add(this.chListBox_days);
-            this.groupBox_timetable.Controls.Add(this.label_days);
-            this.groupBox_timetable.Controls.Add(this.label_dayloop);
             this.groupBox_timetable.Controls.Add(this.dtpicker_Time);
             this.groupBox_timetable.Controls.Add(this.label_time);
             this.groupBox_timetable.Location = new System.Drawing.Point(12, 77);
             this.groupBox_timetable.Name = "groupBox_timetable";
-            this.groupBox_timetable.Size = new System.Drawing.Size(374, 199);
+            this.groupBox_timetable.Size = new System.Drawing.Size(374, 256);
             this.groupBox_timetable.TabIndex = 5;
             this.groupBox_timetable.TabStop = false;
             this.groupBox_timetable.Text = "Time Table";
             // 
-            // checkBox_monthloop
+            // label_dayloop
             // 
-            this.checkBox_monthloop.AutoSize = true;
-            this.checkBox_monthloop.Location = new System.Drawing.Point(310, 54);
-            this.checkBox_monthloop.Name = "checkBox_monthloop";
-            this.checkBox_monthloop.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_monthloop.TabIndex = 16;
-            this.checkBox_monthloop.UseVisualStyleBackColor = true;
-            this.checkBox_monthloop.CheckedChanged += new System.EventHandler(this.checkBox_monthloop_CheckedChanged);
+            this.label_dayloop.AutoSize = true;
+            this.label_dayloop.Location = new System.Drawing.Point(7, 59);
+            this.label_dayloop.Name = "label_dayloop";
+            this.label_dayloop.Size = new System.Drawing.Size(31, 13);
+            this.label_dayloop.TabIndex = 17;
+            this.label_dayloop.Text = "Loop";
             // 
-            // label_monthloop
+            // checkBox_loop
             // 
-            this.label_monthloop.AutoSize = true;
-            this.label_monthloop.Location = new System.Drawing.Point(230, 54);
-            this.label_monthloop.Name = "label_monthloop";
-            this.label_monthloop.Size = new System.Drawing.Size(74, 13);
-            this.label_monthloop.TabIndex = 15;
-            this.label_monthloop.Text = "Monthly Loop ";
+            this.checkBox_loop.AutoSize = true;
+            this.checkBox_loop.Location = new System.Drawing.Point(44, 59);
+            this.checkBox_loop.Name = "checkBox_loop";
+            this.checkBox_loop.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_loop.TabIndex = 18;
+            this.checkBox_loop.UseVisualStyleBackColor = true;
+            this.checkBox_loop.CheckedChanged += new System.EventHandler(this.checkBox_loop_CheckedChanged);
             // 
-            // checkBox_weekloop
+            // groupBox1
             // 
-            this.checkBox_weekloop.AutoSize = true;
-            this.checkBox_weekloop.Location = new System.Drawing.Point(190, 54);
-            this.checkBox_weekloop.Name = "checkBox_weekloop";
-            this.checkBox_weekloop.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_weekloop.TabIndex = 14;
-            this.checkBox_weekloop.UseVisualStyleBackColor = true;
-            this.checkBox_weekloop.CheckedChanged += new System.EventHandler(this.checkBox_weekloop_CheckedChanged);
+            this.groupBox1.Controls.Add(this.radioButton_monthlyloop);
+            this.groupBox1.Controls.Add(this.radioButton_weeklyloop);
+            this.groupBox1.Controls.Add(this.radioButton_dailyloop);
+            this.groupBox1.Controls.Add(this.chListBox_days);
+            this.groupBox1.Controls.Add(this.label_days);
+            this.groupBox1.Location = new System.Drawing.Point(6, 87);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(362, 163);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Loops";
             // 
-            // label_weekloop
+            // radioButton_monthlyloop
             // 
-            this.label_weekloop.AutoSize = true;
-            this.label_weekloop.Location = new System.Drawing.Point(111, 54);
-            this.label_weekloop.Name = "label_weekloop";
-            this.label_weekloop.Size = new System.Drawing.Size(73, 13);
-            this.label_weekloop.TabIndex = 13;
-            this.label_weekloop.Text = "Weekly Loop ";
+            this.radioButton_monthlyloop.AutoSize = true;
+            this.radioButton_monthlyloop.Location = new System.Drawing.Point(268, 19);
+            this.radioButton_monthlyloop.Name = "radioButton_monthlyloop";
+            this.radioButton_monthlyloop.Size = new System.Drawing.Size(62, 17);
+            this.radioButton_monthlyloop.TabIndex = 11;
+            this.radioButton_monthlyloop.TabStop = true;
+            this.radioButton_monthlyloop.Text = "Monthly";
+            this.radioButton_monthlyloop.UseVisualStyleBackColor = true;
+            this.radioButton_monthlyloop.CheckedChanged += new System.EventHandler(this.radioButton_monthlyloop_CheckedChanged);
+            // 
+            // radioButton_weeklyloop
+            // 
+            this.radioButton_weeklyloop.AutoSize = true;
+            this.radioButton_weeklyloop.Location = new System.Drawing.Point(142, 19);
+            this.radioButton_weeklyloop.Name = "radioButton_weeklyloop";
+            this.radioButton_weeklyloop.Size = new System.Drawing.Size(61, 17);
+            this.radioButton_weeklyloop.TabIndex = 10;
+            this.radioButton_weeklyloop.TabStop = true;
+            this.radioButton_weeklyloop.Text = "Weekly";
+            this.radioButton_weeklyloop.UseVisualStyleBackColor = true;
+            this.radioButton_weeklyloop.CheckedChanged += new System.EventHandler(this.radioButton_weeklyloop_CheckedChanged);
+            // 
+            // radioButton_dailyloop
+            // 
+            this.radioButton_dailyloop.AutoSize = true;
+            this.radioButton_dailyloop.Location = new System.Drawing.Point(10, 19);
+            this.radioButton_dailyloop.Name = "radioButton_dailyloop";
+            this.radioButton_dailyloop.Size = new System.Drawing.Size(48, 17);
+            this.radioButton_dailyloop.TabIndex = 7;
+            this.radioButton_dailyloop.TabStop = true;
+            this.radioButton_dailyloop.Text = "Daily";
+            this.radioButton_dailyloop.UseVisualStyleBackColor = true;
+            this.radioButton_dailyloop.CheckedChanged += new System.EventHandler(this.radioButton_dailyloop_CheckedChanged);
+            // 
+            // chListBox_days
+            // 
+            this.chListBox_days.Enabled = false;
+            this.chListBox_days.FormattingEnabled = true;
+            this.chListBox_days.Location = new System.Drawing.Point(44, 48);
+            this.chListBox_days.Name = "chListBox_days";
+            this.chListBox_days.Size = new System.Drawing.Size(311, 109);
+            this.chListBox_days.TabIndex = 9;
+            // 
+            // label_days
+            // 
+            this.label_days.AutoSize = true;
+            this.label_days.Location = new System.Drawing.Point(7, 48);
+            this.label_days.Name = "label_days";
+            this.label_days.Size = new System.Drawing.Size(31, 13);
+            this.label_days.TabIndex = 8;
+            this.label_days.Text = "Days";
             // 
             // dtpicker_date
             // 
@@ -352,51 +430,6 @@
             this.label_date.TabIndex = 12;
             this.label_date.Text = "Date";
             // 
-            // checkBox_dayloop
-            // 
-            this.checkBox_dayloop.AutoSize = true;
-            this.checkBox_dayloop.Location = new System.Drawing.Point(74, 53);
-            this.checkBox_dayloop.Name = "checkBox_dayloop";
-            this.checkBox_dayloop.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_dayloop.TabIndex = 10;
-            this.checkBox_dayloop.UseVisualStyleBackColor = true;
-            this.checkBox_dayloop.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // chListBox_days
-            // 
-            this.chListBox_days.Enabled = false;
-            this.chListBox_days.FormattingEnabled = true;
-            this.chListBox_days.Items.AddRange(new object[] {
-            "MON",
-            "TUE",
-            "THU",
-            "WED",
-            "FRY",
-            "SAT",
-            "SUN"});
-            this.chListBox_days.Location = new System.Drawing.Point(43, 80);
-            this.chListBox_days.Name = "chListBox_days";
-            this.chListBox_days.Size = new System.Drawing.Size(282, 109);
-            this.chListBox_days.TabIndex = 9;
-            // 
-            // label_days
-            // 
-            this.label_days.AutoSize = true;
-            this.label_days.Location = new System.Drawing.Point(6, 80);
-            this.label_days.Name = "label_days";
-            this.label_days.Size = new System.Drawing.Size(31, 13);
-            this.label_days.TabIndex = 8;
-            this.label_days.Text = "Days";
-            // 
-            // label_dayloop
-            // 
-            this.label_dayloop.AutoSize = true;
-            this.label_dayloop.Location = new System.Drawing.Point(3, 53);
-            this.label_dayloop.Name = "label_dayloop";
-            this.label_dayloop.Size = new System.Drawing.Size(63, 13);
-            this.label_dayloop.TabIndex = 7;
-            this.label_dayloop.Text = " Daily Loop ";
-            // 
             // dtpicker_Time
             // 
             this.dtpicker_Time.Location = new System.Drawing.Point(225, 24);
@@ -412,29 +445,42 @@
             this.label_time.Size = new System.Drawing.Size(30, 13);
             this.label_time.TabIndex = 6;
             this.label_time.Text = "Time";
-            this.label_time.Click += new System.EventHandler(this.label_time_Click);
             // 
-            // label_workingdir
+            // listBox_destinations
             // 
-            this.label_workingdir.AutoSize = true;
-            this.label_workingdir.Location = new System.Drawing.Point(6, 206);
-            this.label_workingdir.Name = "label_workingdir";
-            this.label_workingdir.Size = new System.Drawing.Size(117, 13);
-            this.label_workingdir.TabIndex = 15;
-            this.label_workingdir.Text = "SSH Working Directory";
+            this.listBox_destinations.FormattingEnabled = true;
+            this.listBox_destinations.Location = new System.Drawing.Point(6, 22);
+            this.listBox_destinations.Name = "listBox_destinations";
+            this.listBox_destinations.Size = new System.Drawing.Size(220, 95);
+            this.listBox_destinations.TabIndex = 6;
             // 
-            // textBox_workingDir
+            // btn_removeDes
             // 
-            this.textBox_workingDir.Location = new System.Drawing.Point(129, 203);
-            this.textBox_workingDir.Name = "textBox_workingDir";
-            this.textBox_workingDir.Size = new System.Drawing.Size(232, 20);
-            this.textBox_workingDir.TabIndex = 14;
+            this.btn_removeDes.Location = new System.Drawing.Point(232, 22);
+            this.btn_removeDes.Name = "btn_removeDes";
+            this.btn_removeDes.Size = new System.Drawing.Size(55, 23);
+            this.btn_removeDes.TabIndex = 17;
+            this.btn_removeDes.Text = "Remove";
+            this.btn_removeDes.UseVisualStyleBackColor = true;
+            this.btn_removeDes.Click += new System.EventHandler(this.btn_removeDes_Click);
+            // 
+            // groupBox_Destinations
+            // 
+            this.groupBox_Destinations.Controls.Add(this.listBox_destinations);
+            this.groupBox_Destinations.Controls.Add(this.btn_removeDes);
+            this.groupBox_Destinations.Location = new System.Drawing.Point(12, 603);
+            this.groupBox_Destinations.Name = "groupBox_Destinations";
+            this.groupBox_Destinations.Size = new System.Drawing.Size(293, 124);
+            this.groupBox_Destinations.TabIndex = 18;
+            this.groupBox_Destinations.TabStop = false;
+            this.groupBox_Destinations.Text = "Destinations";
             // 
             // Form_AddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 638);
+            this.ClientSize = new System.Drawing.Size(399, 731);
+            this.Controls.Add(this.groupBox_Destinations);
             this.Controls.Add(this.groupBox_timetable);
             this.Controls.Add(this.groupBox_DesConfig);
             this.Controls.Add(this.btn_Save);
@@ -450,6 +496,9 @@
             this.groupBox_desType.PerformLayout();
             this.groupBox_timetable.ResumeLayout(false);
             this.groupBox_timetable.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox_Destinations.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -480,17 +529,21 @@
         private System.Windows.Forms.Label label_time;
         private System.Windows.Forms.CheckedListBox chListBox_days;
         private System.Windows.Forms.Label label_days;
-        private System.Windows.Forms.Label label_dayloop;
         private System.Windows.Forms.DateTimePicker dtpicker_Time;
-        private System.Windows.Forms.CheckBox checkBox_dayloop;
         private System.Windows.Forms.Button btn_addDes;
         private System.Windows.Forms.DateTimePicker dtpicker_date;
         private System.Windows.Forms.Label label_date;
-        private System.Windows.Forms.CheckBox checkBox_weekloop;
-        private System.Windows.Forms.Label label_weekloop;
-        private System.Windows.Forms.CheckBox checkBox_monthloop;
-        private System.Windows.Forms.Label label_monthloop;
         private System.Windows.Forms.Label label_workingdir;
         private System.Windows.Forms.TextBox textBox_workingDir;
+        private System.Windows.Forms.Label label_dayloop;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox_loop;
+        private System.Windows.Forms.RadioButton radioButton_monthlyloop;
+        private System.Windows.Forms.RadioButton radioButton_weeklyloop;
+        private System.Windows.Forms.RadioButton radioButton_dailyloop;
+        private System.Windows.Forms.ListBox listBox_destinations;
+        private System.Windows.Forms.Button btn_removeDes;
+        private System.Windows.Forms.GroupBox groupBox_Destinations;
+        private System.Windows.Forms.Button btn_ClearDesConfig;
     }
 }

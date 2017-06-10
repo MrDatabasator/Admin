@@ -12,8 +12,9 @@ namespace BackupAdmin
 {
     public partial class Form_AddTask : Form
     {
+        private List<string> WeekDays = new List<string> { "MON", "TUE", "WEN", "THU", "FRY", "SAT", "SUN" };
         private string DestinationMode = "Local";
-        private List<RadioButton> DesButtons { get; set; }
+        private string LoopMode = string.Empty;        
         private ServerReference.tbDaemon Daemon { get; set; }
         private ServerReference.Service1Client Client { get; set; }
         public Form_AddTask(ServerReference.tbDaemon d)
@@ -25,42 +26,49 @@ namespace BackupAdmin
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            ServerReference.tbTask st = new ServerReference.tbTask();
-            ServerReference.tbDestination sd = new ServerReference.tbDestination();
-
-            st.TaskName = this.textBox_TaskName.Text;
-            sd.NetSourcePath = this.textBox_SourcePath.Text;
-            sd.NetDestinationPath = this.textBox_DestinationPath.Text;
-            st.KornExpression = "test";
-            sd.Type = DestinationMode;
-            st.DaemonId = Daemon.Id;
-            sd.FullBackup = true;
-            if(DestinationMode == "FTP" || DestinationMode == "SSH")
+            if (listBox_destinations.Items.Count > 0)
             {
-                sd.FtpServerAddress = textBox_ftpSerAddr.Text;
-                sd.FtpUsername = textBox_ftpUser.Text;
-                sd.FtpPassword = textBox_ftpPass.Text;
-            }
-            Client = new ServerReference.Service1Client();
-            int i = Client.UploadTaskReference(st);
-            sd.TaskId = i;
-            Client.UploadDestination(sd);
-            Client.Close();    
+                ServerReference.tbTask st = new ServerReference.tbTask();
+                st.DaemonId = Daemon.Id;
+                st.TaskName = textBox_TaskName.Text;
+                st.KornExpression = CronCreator();
 
-            this.DialogResult = DialogResult.OK;    
+                Client = new ServerReference.Service1Client();
+                int i = Client.UploadTaskReference(st);
+
+                foreach (ServerReference.tbDestination des in listBox_destinations.Items)
+                {
+                    des.TaskId = i;
+                    Client.UploadDestination(des);
+                }                   
+                Client.Close();
+
+                this.DialogResult = DialogResult.OK;
+            }   
+            else
+            {
+                MessageBox.Show("No destination could be found, please create and add your new destinations", "Error");
+            }
         }
         private void SetupForm()
         {
-            DesButtons = new List<RadioButton>();
-            DesButtons.Add(radioButton_FTP);
-            DesButtons.Add(radioButton_Local);            
-            radioButton_Local.Checked = true;
+            ClearDesConfig();
 
             dtpicker_Time.Format = DateTimePickerFormat.Custom;
             dtpicker_Time.CustomFormat = "HH':'mm':'ss";
 
             dtpicker_date.Format = DateTimePickerFormat.Custom;
             dtpicker_date.CustomFormat = "d'.'MMMM'.'yyyy";
+
+            LoopMode = string.Empty;
+            radioButton_dailyloop.Checked = true;
+            chListBox_days.Enabled = false;
+            chListBox_days.CheckOnClick = true;
+            foreach (string day in WeekDays)
+                chListBox_days.Items.Add(day, true);
+            radioButton_dailyloop.Enabled = false;
+            radioButton_monthlyloop.Enabled = false;
+            radioButton_weeklyloop.Enabled = false;
         }
         /*private void SetCheckedRadioButton(RadioButton button)
         {
@@ -82,6 +90,7 @@ namespace BackupAdmin
                 textBox_ftpSerAddr.Enabled = true;
                 textBox_ftpUser.Enabled = true;
                 textBox_ftpPass.Enabled = true;
+                textBox_workingDir.Enabled = false;
                 DestinationMode = "FTP";
             }
             else if(mode == "Local")
@@ -93,6 +102,7 @@ namespace BackupAdmin
                 textBox_ftpSerAddr.Enabled = false;
                 textBox_ftpUser.Enabled = false;
                 textBox_ftpPass.Enabled = false;
+                textBox_workingDir.Enabled = false;
                 DestinationMode = "Local";
             }
             else if (mode == "SSH")
@@ -104,8 +114,23 @@ namespace BackupAdmin
                 textBox_ftpSerAddr.Enabled = true;
                 textBox_ftpUser.Enabled = true;
                 textBox_ftpPass.Enabled = true;
+                textBox_workingDir.Enabled = true;
                 DestinationMode = "SSH";
             }
+        }
+        private void LoopModeChanged(string mode)
+        {
+            if(mode == "Daily")
+            {
+                dtpicker_date.Enabled = false;
+                chListBox_days.Enabled = true;
+            }
+            else if (mode == "Monthly" || mode == "Weekly")
+            {
+                dtpicker_date.Enabled = true;
+                chListBox_days.Enabled = false;
+            }
+            
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
@@ -115,13 +140,12 @@ namespace BackupAdmin
         private void radioButton_Local_CheckedChanged(object sender, EventArgs e)
         {
             DesModeChanged("Local");
-          //  SetCheckedRadioButton(radioButton_Local);
+          
         }
 
         private void radioButton_FTP_CheckedChanged(object sender, EventArgs e)
         {
-            DesModeChanged("FTP");
-          //  SetCheckedRadioButton(radioButton_FTP);
+            DesModeChanged("FTP");         
         }
 
         private void radioButton_SSH_CheckedChanged(object sender, EventArgs e)
@@ -133,53 +157,131 @@ namespace BackupAdmin
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox_dayloop.Checked)
-            {
-                dtpicker_date.Enabled = false;
-                chListBox_days.Enabled = true;
-            }
-            else
-            {
-                dtpicker_date.Enabled = true;
-                chListBox_days.Enabled = false;
-            }
-        }
-
-        private void label_time_Click(object sender, EventArgs e)
-        {
-
-        }
+            
+        }       
         private string CronCreator()
         {
+            string ReturnCron = string.Empty;
 
-            string ReturnCron = null;
+            if (!this.checkBox_loop.Checked)
+            {
+                ReturnCron = dtpicker_Time.Value.Second + " " + dtpicker_Time.Value.Minute +
+                    " " + dtpicker_Time.Value.Hour + " " + dtpicker_date.Value.Day + " " +
+                    dtpicker_date.Value.Month + " " + "?" + " " + dtpicker_date.Value.Year;
+            }
+            else
+            {
+                
+                if (LoopMode == "Daily")
+                {
+                    string Days = "";
+                    if (chListBox_days.CheckedItems.Count > 0)
+                    {
+                        foreach (string s in chListBox_days.CheckedItems)
+                            Days += s + ",";
+                        Days.Remove(Days.Length - 1, 1);
+
+                        ReturnCron = dtpicker_Time.Value.Second + " " + dtpicker_Time.Value.Minute +
+                            " " + dtpicker_Time.Value.Hour + " " + "?" +" " + "*" +" " + Days;
+                    }
+                    else
+                    {
+                        ReturnCron = string.Empty;                        
+                    }                    
+                }
+                else if(LoopMode == "Weekly")
+                {
+                    ReturnCron = dtpicker_Time.Value.Second + " " + dtpicker_Time.Value.Minute +
+                            " " + dtpicker_Time.Value.Hour + " " + dtpicker_date.Value.Day + "/7" +
+                            " " + "*" + " " + "?";
+                }
+                else if (LoopMode == "Monthly")
+                {
+                    ReturnCron = dtpicker_Time.Value.Second + " " + dtpicker_Time.Value.Minute +
+                            " " + dtpicker_Time.Value.Hour + " " + dtpicker_date.Value.Day +
+                            " " + "*" + " " + "?";
+                }
+            }
+            
             return ReturnCron;
         }
-
-        private void checkBox_weekloop_CheckedChanged(object sender, EventArgs e)
+        private void radioButton_dailyloop_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_weekloop.Checked)
+            LoopModeChanged("Daily");
+        }
+
+        private void radioButton_weeklyloop_CheckedChanged(object sender, EventArgs e)
+        {
+            LoopModeChanged("Weekly");
+        }
+
+        private void radioButton_monthlyloop_CheckedChanged(object sender, EventArgs e)
+        {
+            LoopModeChanged("Monthly");
+        }
+
+        private void checkBox_loop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_loop.Checked)
             {
-                checkBox_dayloop.Enabled = false;
-                chListBox_days.Enabled = false;
-            }
-            else
-            {
-                checkBox_dayloop.Enabled = true;
+                dtpicker_date.Enabled = true;
                 chListBox_days.Enabled = true;
-            }
-        }
-
-        private void checkBox_monthloop_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox_monthloop.Checked)
-            {
-                
+                radioButton_dailyloop.Enabled = true;
+                radioButton_monthlyloop.Enabled = true;
+                radioButton_weeklyloop.Enabled = true;
+                radioButton_dailyloop.Checked = true;
             }
             else
             {
-                
+                LoopMode = string.Empty;
+                dtpicker_date.Enabled = true;
+                chListBox_days.Enabled = false;
+                radioButton_dailyloop.Enabled = false;
+                radioButton_monthlyloop.Enabled = false;
+                radioButton_weeklyloop.Enabled = false;
             }
         }
+        private void ClearDesConfig()
+        {
+            DesModeChanged("Local");
+            radioButton_Local.Checked = true;
+
+            textBox_DestinationPath.Text = string.Empty;
+            textBox_ftpPass.Text = string.Empty;
+            textBox_ftpSerAddr.Text = string.Empty;
+            textBox_ftpUser.Text = string.Empty;
+            textBox_SourcePath.Text = string.Empty;
+            textBox_workingDir.Text = string.Empty;
+        }
+
+        private void btn_ClearDesConfig_Click(object sender, EventArgs e)
+        {
+            ClearDesConfig();
+        }
+
+        private void btn_addDes_Click(object sender, EventArgs e)
+        {            
+            ServerReference.tbDestination sd = new ServerReference.tbDestination();           
+            sd.NetSourcePath = this.textBox_SourcePath.Text;
+            sd.NetDestinationPath = this.textBox_DestinationPath.Text;            
+            sd.Type = DestinationMode;            
+            sd.FullBackup = true;
+            if (DestinationMode == "FTP" || DestinationMode == "SSH")
+            {
+                sd.FtpServerAddress = textBox_ftpSerAddr.Text;
+                sd.FtpUsername = textBox_ftpUser.Text;
+                sd.FtpPassword = textBox_ftpPass.Text;
+            }           
+            
+            listBox_destinations.Items.Add(sd);           
+        }
+
+        private void btn_removeDes_Click(object sender, EventArgs e)
+        {
+            if (listBox_destinations.Items.Count > 0)
+                listBox_destinations.Items.RemoveAt(listBox_destinations.SelectedIndex);
+        }
+
+          
     }
 }
