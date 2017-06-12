@@ -275,7 +275,8 @@ namespace BackupAdmin
                 sd.WorkingDirectory = textBox_workingDir.Text;
             }           
             
-            listBox_destinations.Items.Add(sd);           
+            listBox_destinations.Items.Add(sd);
+            ClearDesConfig();         
         }
 
         private void btn_removeDes_Click(object sender, EventArgs e)
