@@ -52,7 +52,7 @@ namespace BackupAdmin
         }
         private void SetupForm()
         {
-            ClearDesConfig();
+            //ClearDesConfig();
 
             dtpicker_Time.Format = DateTimePickerFormat.Custom;
             dtpicker_Time.CustomFormat = "HH':'mm':'ss";
@@ -61,8 +61,9 @@ namespace BackupAdmin
             dtpicker_date.CustomFormat = "d'.'MMMM'.'yyyy";
 
             LoopMode = string.Empty;
-            dtpicker_date.Enabled = true;
+            radioButton_Local.Checked = true;           
             radioButton_dailyloop.Checked = true;
+            dtpicker_date.Enabled = true;
             chListBox_days.Enabled = true;
             chListBox_days.CheckOnClick = true;
             foreach (string day in WeekDays)
@@ -123,11 +124,13 @@ namespace BackupAdmin
         {
             if(mode == "Daily")
             {
+                LoopMode = mode;
                 dtpicker_date.Enabled = false;
                 chListBox_days.Enabled = true;
             }
             else if (mode == "Monthly" || mode == "Weekly")
             {
+                LoopMode = mode;
                 dtpicker_date.Enabled = true;
                 chListBox_days.Enabled = false;
             }
@@ -171,8 +174,7 @@ namespace BackupAdmin
                     dtpicker_date.Value.Month + " " + "?" + " " + dtpicker_date.Value.Year;
             }
             else
-            {
-                
+            {                
                 if (LoopMode == "Daily")
                 {
                     string Days = "";
@@ -180,7 +182,7 @@ namespace BackupAdmin
                     {
                         foreach (string s in chListBox_days.CheckedItems)
                             Days += s + ",";
-                        Days.Remove(Days.Length - 1, 1);
+                        Days = Days.Remove(Days.Length - 1, 1);
 
                         ReturnCron = dtpicker_Time.Value.Second + " " + dtpicker_Time.Value.Minute +
                             " " + dtpicker_Time.Value.Hour + " " + "?" +" " + "*" +" " + Days;
