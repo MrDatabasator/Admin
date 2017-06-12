@@ -82,3 +82,4 @@ C:\backupsw\admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.exe
 C:\backupsw\admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.pdb
 X:\PROG\backupsw\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_AddTask.resources
 D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Form_AddTask.resources
+D:\Šimon\Prográmko\BackupSW\Admin\BackupAdmin\BackupAdmin\obj\Debug\BackupAdmin.Stats.resources

@@ -502,6 +502,9 @@ namespace BackupAdmin.ServerReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -547,6 +550,19 @@ namespace BackupAdmin.ServerReference {
                 if ((object.ReferenceEquals(this.MessageField, value) != true)) {
                     this.MessageField = value;
                     this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
                 }
             }
         }
@@ -752,11 +768,23 @@ namespace BackupAdmin.ServerReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllDaemons", ReplyAction="http://tempuri.org/IService1/GetAllDaemonsResponse")]
         System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon[]> GetAllDaemonsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllStatsLogs", ReplyAction="http://tempuri.org/IService1/GetAllStatsLogsResponse")]
+        BackupAdmin.ServerReference.tbLog[] GetAllStatsLogs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllStatsLogs", ReplyAction="http://tempuri.org/IService1/GetAllStatsLogsResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbLog[]> GetAllStatsLogsAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTaskReference", ReplyAction="http://tempuri.org/IService1/UploadTaskReferenceResponse")]
         int UploadTaskReference(BackupAdmin.ServerReference.tbTask t);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UploadTaskReference", ReplyAction="http://tempuri.org/IService1/UploadTaskReferenceResponse")]
         System.Threading.Tasks.Task<int> UploadTaskReferenceAsync(BackupAdmin.ServerReference.tbTask t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemonById", ReplyAction="http://tempuri.org/IService1/GetDaemonByIdResponse")]
+        BackupAdmin.ServerReference.tbDaemon GetDaemonById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDaemonById", ReplyAction="http://tempuri.org/IService1/GetDaemonByIdResponse")]
+        System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon> GetDaemonByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteTask", ReplyAction="http://tempuri.org/IService1/DeleteTaskResponse")]
         void DeleteTask(BackupAdmin.ServerReference.tbTask t);
@@ -990,12 +1018,28 @@ namespace BackupAdmin.ServerReference {
             return base.Channel.GetAllDaemonsAsync();
         }
         
+        public BackupAdmin.ServerReference.tbLog[] GetAllStatsLogs() {
+            return base.Channel.GetAllStatsLogs();
+        }
+        
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbLog[]> GetAllStatsLogsAsync() {
+            return base.Channel.GetAllStatsLogsAsync();
+        }
+        
         public int UploadTaskReference(BackupAdmin.ServerReference.tbTask t) {
             return base.Channel.UploadTaskReference(t);
         }
         
         public System.Threading.Tasks.Task<int> UploadTaskReferenceAsync(BackupAdmin.ServerReference.tbTask t) {
             return base.Channel.UploadTaskReferenceAsync(t);
+        }
+        
+        public BackupAdmin.ServerReference.tbDaemon GetDaemonById(int id) {
+            return base.Channel.GetDaemonById(id);
+        }
+        
+        public System.Threading.Tasks.Task<BackupAdmin.ServerReference.tbDaemon> GetDaemonByIdAsync(int id) {
+            return base.Channel.GetDaemonByIdAsync(id);
         }
         
         public void DeleteTask(BackupAdmin.ServerReference.tbTask t) {

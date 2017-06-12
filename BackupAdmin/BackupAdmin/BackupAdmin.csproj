@@ -82,6 +82,12 @@
     <Compile Include="Forms\Form_Task.Designer.cs">
       <DependentUpon>Form_Task.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stats.Designer.cs">
+      <DependentUpon>Stats.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServerReference\Reference.cs">
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Task.resx">
       <DependentUpon>Form_Task.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stats.resx">
+      <DependentUpon>Stats.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,6 +136,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbDestination.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbLog.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServerReference\BackupAdmin.ServerReference.tbTask.datasource">

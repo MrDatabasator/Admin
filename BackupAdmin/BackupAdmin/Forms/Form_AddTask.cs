@@ -12,7 +12,7 @@ namespace BackupAdmin
 {
     public partial class Form_AddTask : Form
     {
-        private List<string> WeekDays = new List<string> { "MON", "TUE", "WEN", "THU", "FRY", "SAT", "SUN" };
+        private List<string> WeekDays = new List<string> { "MON", "TUE", "WEN", "THU", "FRI", "SAT", "SUN" };
         private string DestinationMode = "Local";
         private string LoopMode = string.Empty;        
         private ServerReference.tbDaemon Daemon { get; set; }
@@ -61,8 +61,9 @@ namespace BackupAdmin
             dtpicker_date.CustomFormat = "d'.'MMMM'.'yyyy";
 
             LoopMode = string.Empty;
+            dtpicker_date.Enabled = true;
             radioButton_dailyloop.Checked = true;
-            chListBox_days.Enabled = false;
+            chListBox_days.Enabled = true;
             chListBox_days.CheckOnClick = true;
             foreach (string day in WeekDays)
                 chListBox_days.Items.Add(day, true);

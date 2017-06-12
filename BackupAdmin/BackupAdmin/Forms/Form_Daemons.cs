@@ -79,5 +79,12 @@ namespace BackupAdmin
         {
             LoadDaemons();
         }
+
+        private void btn_stats_MouseClick(object sender, MouseEventArgs e)
+        {
+            Stats stats = new Stats();
+            stats.ShowDialog();
+            
+        }
     }
 }
