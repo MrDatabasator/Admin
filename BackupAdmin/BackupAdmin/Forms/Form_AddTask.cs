@@ -272,6 +272,7 @@ namespace BackupAdmin
                 sd.FtpServerAddress = textBox_ftpSerAddr.Text;
                 sd.FtpUsername = textBox_ftpUser.Text;
                 sd.FtpPassword = textBox_ftpPass.Text;
+                sd.WorkingDirectory = textBox_workingDir.Text;
             }           
             
             listBox_destinations.Items.Add(sd);           
