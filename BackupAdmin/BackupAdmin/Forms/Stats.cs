@@ -19,7 +19,6 @@ namespace BackupAdmin
         private List<ServerReference.tbDaemon> Daemons = new List<ServerReference.tbDaemon>();
 
         private int HighestCount { get; set; }
-
         private int BackupAxisPointGap { get; set; }
 
         private const int TimeAxisCount = 7;
@@ -98,13 +97,15 @@ namespace BackupAdmin
         }
         private void GetGraphDaemons()
         {
+            List<int> dIndexes = new List<int>();
             Client = new ServerReference.Service1Client();
             foreach (ServerReference.tbLog log in dataLogs)
             {
-                ServerReference.tbDaemon daemon = Client.GetDaemonById(log.DaemonId);
-                if (!Daemons.Contains(daemon))
+                ServerReference.tbDaemon daemon = Client.GetDaemonById(log.DaemonId);                
+                if (!dIndexes.Contains(daemon.Id))
                 {
-                    Daemons.Add(daemon);                    
+                    Daemons.Add(daemon);
+                    dIndexes.Add(daemon.Id);
                 }               
             }
             Client.Close();
@@ -146,7 +147,7 @@ namespace BackupAdmin
             int result = 0;
             foreach(ServerReference.tbLog log in dataLogs)
             {
-                if (log.Time.Date == DateTime.Today.Date.AddDays(-day))
+                if (log.Time.Date == DateTime.Today.Date.AddDays(day - TimeAxisCount +1))
                     result++;
             }
             return result;
