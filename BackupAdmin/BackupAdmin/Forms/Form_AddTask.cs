@@ -269,6 +269,7 @@ namespace BackupAdmin
             sd.NetDestinationPath = this.textBox_DestinationPath.Text;            
             sd.Type = DestinationMode;            
             sd.FullBackup = true;
+            sd.ClientMail = this.textBox_Email.Text;
             if (DestinationMode == "FTP" || DestinationMode == "SSH")
             {
                 sd.FtpServerAddress = textBox_ftpSerAddr.Text;

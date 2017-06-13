@@ -68,6 +68,8 @@
             this.listBox_destinations = new System.Windows.Forms.ListBox();
             this.btn_removeDes = new System.Windows.Forms.Button();
             this.groupBox_Destinations = new System.Windows.Forms.GroupBox();
+            this.label_mail = new System.Windows.Forms.Label();
+            this.textBox_Email = new System.Windows.Forms.TextBox();
             this.groupBox_TaskConfig.SuspendLayout();
             this.groupBox_DesConfig.SuspendLayout();
             this.groupBox_desType.SuspendLayout();
@@ -110,11 +112,13 @@
             // 
             // groupBox_TaskConfig
             // 
+            this.groupBox_TaskConfig.Controls.Add(this.textBox_Email);
+            this.groupBox_TaskConfig.Controls.Add(this.label_mail);
             this.groupBox_TaskConfig.Controls.Add(this.label_taskname);
             this.groupBox_TaskConfig.Controls.Add(this.textBox_TaskName);
             this.groupBox_TaskConfig.Location = new System.Drawing.Point(12, 12);
             this.groupBox_TaskConfig.Name = "groupBox_TaskConfig";
-            this.groupBox_TaskConfig.Size = new System.Drawing.Size(374, 59);
+            this.groupBox_TaskConfig.Size = new System.Drawing.Size(374, 79);
             this.groupBox_TaskConfig.TabIndex = 1;
             this.groupBox_TaskConfig.TabStop = false;
             this.groupBox_TaskConfig.Text = "Task Configuration";
@@ -137,7 +141,7 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(311, 704);
+            this.btn_Cancel.Location = new System.Drawing.Point(312, 724);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 2;
@@ -147,7 +151,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(311, 675);
+            this.btn_Save.Location = new System.Drawing.Point(312, 695);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 23);
             this.btn_Save.TabIndex = 3;
@@ -172,7 +176,7 @@
             this.groupBox_DesConfig.Controls.Add(this.label_des);
             this.groupBox_DesConfig.Controls.Add(this.textBox_SourcePath);
             this.groupBox_DesConfig.Controls.Add(this.textBox_DestinationPath);
-            this.groupBox_DesConfig.Location = new System.Drawing.Point(12, 339);
+            this.groupBox_DesConfig.Location = new System.Drawing.Point(13, 359);
             this.groupBox_DesConfig.Name = "groupBox_DesConfig";
             this.groupBox_DesConfig.Size = new System.Drawing.Size(375, 258);
             this.groupBox_DesConfig.TabIndex = 4;
@@ -320,7 +324,7 @@
             this.groupBox_timetable.Controls.Add(this.label_date);
             this.groupBox_timetable.Controls.Add(this.dtpicker_Time);
             this.groupBox_timetable.Controls.Add(this.label_time);
-            this.groupBox_timetable.Location = new System.Drawing.Point(12, 77);
+            this.groupBox_timetable.Location = new System.Drawing.Point(13, 97);
             this.groupBox_timetable.Name = "groupBox_timetable";
             this.groupBox_timetable.Size = new System.Drawing.Size(374, 256);
             this.groupBox_timetable.TabIndex = 5;
@@ -468,18 +472,34 @@
             // 
             this.groupBox_Destinations.Controls.Add(this.listBox_destinations);
             this.groupBox_Destinations.Controls.Add(this.btn_removeDes);
-            this.groupBox_Destinations.Location = new System.Drawing.Point(12, 603);
+            this.groupBox_Destinations.Location = new System.Drawing.Point(13, 623);
             this.groupBox_Destinations.Name = "groupBox_Destinations";
             this.groupBox_Destinations.Size = new System.Drawing.Size(293, 124);
             this.groupBox_Destinations.TabIndex = 18;
             this.groupBox_Destinations.TabStop = false;
             this.groupBox_Destinations.Text = "Destinations";
             // 
+            // label_mail
+            // 
+            this.label_mail.AutoSize = true;
+            this.label_mail.Location = new System.Drawing.Point(6, 57);
+            this.label_mail.Name = "label_mail";
+            this.label_mail.Size = new System.Drawing.Size(60, 13);
+            this.label_mail.TabIndex = 6;
+            this.label_mail.Text = "Your E-mail";
+            // 
+            // textBox_Email
+            // 
+            this.textBox_Email.Location = new System.Drawing.Point(94, 54);
+            this.textBox_Email.Name = "textBox_Email";
+            this.textBox_Email.Size = new System.Drawing.Size(274, 20);
+            this.textBox_Email.TabIndex = 7;
+            // 
             // Form_AddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 731);
+            this.ClientSize = new System.Drawing.Size(399, 756);
             this.Controls.Add(this.groupBox_Destinations);
             this.Controls.Add(this.groupBox_timetable);
             this.Controls.Add(this.groupBox_DesConfig);
@@ -545,5 +565,7 @@
         private System.Windows.Forms.Button btn_removeDes;
         private System.Windows.Forms.GroupBox groupBox_Destinations;
         private System.Windows.Forms.Button btn_ClearDesConfig;
+        private System.Windows.Forms.TextBox textBox_Email;
+        private System.Windows.Forms.Label label_mail;
     }
 }
